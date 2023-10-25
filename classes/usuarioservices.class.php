@@ -19,4 +19,16 @@ class UsuarioServices{
         R::store($usuario);
         R::close();
     }
+    public static function excluir($id){
+        require_once 'r.class.php';
+        if(!R::testConnection()){
+        R::setup(
+            'mysql:host=127.0.0.1;dbname=sistemarestaurante',
+            'root',
+            ''
+        );
+    }
+        R::trash('$usuario', $id);
+        R::close();
+    }
 }
