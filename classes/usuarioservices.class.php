@@ -31,4 +31,22 @@ class UsuarioServices{
         R::trash('$usuario', $id);
         R::close();
     }
+
+    //Parte de notícia
+    public static function salvarnoticia($titulo,$conteudo)
+    {
+        require_once 'r.class.php';
+        R::setup(
+            'mysql:host=127.0.0.1;dbname=sistemarestaurante',
+            'root',
+            ''
+        );
+
+        $noticia = R::dispense('noticia');
+        $noticia->titulo = $titulo;
+        $noticia->conteudo = $conteudo;
+
+        R::store($noticia);
+        R::close();
+    }
 }
