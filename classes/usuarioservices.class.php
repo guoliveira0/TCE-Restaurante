@@ -44,6 +44,7 @@ class UsuarioServices
         $noticia = R::dispense('noticia');
         $noticia->titulo = $titulo;
         $noticia->conteudo = nl2br($conteudo);
+        $noticia->data = date('d/m/Y H:i');
 
         R::store($noticia);
         R::close();

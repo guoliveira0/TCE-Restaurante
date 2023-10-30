@@ -27,10 +27,10 @@
         $usuario->senha = md5(123 . '__');
         R::store($usuario);
         R::close();*/
-        $noticia = R::findForUpdate('noticia', );
-        foreach($noticia as $x){
-            echo "$x<br>";
-        }
+        $noticia = R::findOneForUpdate('noticia', 'data = (SELECT MAX(data) FROM noticia)');
+        $noticia2 = R::findOneForUpdate('noticia', 'ORDER BY data DESC LIMIT 1 OFFSET 1');
+        echo "$noticia";
+        echo "$noticia2";
      
 
 
