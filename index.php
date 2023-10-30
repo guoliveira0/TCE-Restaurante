@@ -20,13 +20,13 @@
             ''
         );
 
-        $usuario = R::dispense('usuario');
+        /*$usuario = R::dispense('usuario');
         $usuario->email = 'gerente@email.com';
         $usuario->nome = 'Gerente1';
         $usuario->perfil = R::enum(Perfil::Gerente);
         $usuario->senha = md5(123 . '__');
         R::store($usuario);
-        R::close();
+        R::close();*/
         ?>
 
         <!-- Código para aparecer as noticias -->

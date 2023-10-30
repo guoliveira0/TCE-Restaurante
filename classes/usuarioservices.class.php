@@ -40,6 +40,7 @@ class UsuarioServices
             'root',
             ''
         );
+        date_default_timezone_get("America/Fortaleza");
 
         $noticia = R::dispense('noticia');
         $noticia->titulo = $titulo;
@@ -48,5 +49,13 @@ class UsuarioServices
 
         R::store($noticia);
         R::close();
+    }
+    public static function procurar(){
+        require_once 'r.class.php';
+        R::setup('mysql:host=127.0.0.1;dbname=sistemarestaurante', 'root', '');
+
+        $usuarios = R::findAll('usuario');
+        R::close();
+        return $usuarios;
     }
 }

@@ -30,11 +30,11 @@ class Util
         session_start();
         return isset($_SESSION['email']);
     }
-    public static function isAdmin()
+    public static function isGerente()
     {
         session_start();
-        if ($_SESSION['admin'] = TRUE) {
-            header("Location:admin.php");
+        if ($_SESSION['perfil'] == 'gerente') {
+            header("Location:../usuarios/gerente/index.php");
         } else {
             header("Location:403.php");
         }
@@ -75,4 +75,5 @@ class Util
         R::close();
         //return count($usuarios) > 0;
     }
+   
 }
