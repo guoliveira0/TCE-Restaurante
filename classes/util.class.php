@@ -16,7 +16,7 @@ class Util
     {
         if (!isset($_SESSION)) session_start();
         session_destroy();
-        header("Loation:/autenticacao/index.php");
+        header("Location:../index.php");
         die();
     }
     public static function isLog()
@@ -44,7 +44,7 @@ class Util
         require_once 'r.class.php';
 
         R::setup(
-            'mysql:host=127.0.0.1;dbname=sistemagestao',
+            'mysql:host=127.0.0.1;dbname=sistemarestaurante',
             'root',
             ''
         );
@@ -55,16 +55,22 @@ class Util
             session_start();
             $_SESSION['usuario'] = $usuarios['nome'];
             $_SESSION['email'] = $usuarios['email'];
-            $_SESSION['admin'] = $usuarios['admin'];
+            $_SESSION['perfil'] = $usuarios['perfil'];
+       
 
-            if ($usuarios['admin']) {
-                header('Location:admin/index.php');
-            } else {
-                header('Location:user/index.php');
+            if ($usuarios['perfil'] == 'gerente') {
+                header('Location:../usuarios/gerente/index.php');
+            } 
+            else if($usuarios['perfil'] == 'caixa'){
+                header('Location:../usuarios/caixa/index.php');
+            }
+        
+            else {
+                header('Location:../usuarios/cliente/index.php');
             }
         } else {
 
-            header('Location:index.php');
+            header('Location:../index.php');
         }
         R::close();
         //return count($usuarios) > 0;

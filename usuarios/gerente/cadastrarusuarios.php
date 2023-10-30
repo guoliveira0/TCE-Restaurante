@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <?php include '../inc/cabecalho.inc.php'; ?>
+    <?php include 'inc/cabecalho.inc.php'; ?>
 
     <main>
       <form action="cadastrarusuarios.php" method="post">
@@ -29,7 +29,7 @@
         </fieldset>
       </form>
       <?php
-      require_once '../classes/usuarioservices.class.php';
+      require_once '../../classes/usuarioservices.class.php';
       UsuarioServices::salvar($_POST['nome'], $_POST['email'], $_POST['senha'], $_POST['perfis'] );
       ?>
     </main>
