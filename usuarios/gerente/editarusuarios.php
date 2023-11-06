@@ -1,22 +1,21 @@
 <?php
 
-require_once '../classes/protecao.class.php';
-if (!Util::isGerente()){
-    header('Location:./index.php');
-}
+require_once '../../classes/util.class.php';
+Util::isGerente();
+
 
 if (isset($_POST['id'])) {
-    require_once '../classes/usuarioservices.class.php';
+    require_once '../../classes/usuarioservices.class.php';
 
-    $usuario = UsuarioServices::localizarPorId($_GET['id']);
+    $usuario = UsuarioServices::procurarPorId($_POST['id']);
 
     $id = $usuario->id;
     $nome = $usuario->nome;
     $email = $usuario->email;
-    $admin = $usuario->admin;
+    $perfil = $usuario->perfil;
 
 } else {
-    header('Location:cadastrousuarios.php');
+    header('Location:cadastrarusuarios.php');
 }
 
 ?>
@@ -34,13 +33,14 @@ if (isset($_POST['id'])) {
 </head>
 
 <body>
+   
     <?php
-    include '../inc/cabecalho.inc.php'; ?>
+    include '../../padrao/cabecalho.inc.php'; ?>
 
     <main>
         <h1>Cadastro de Usuários</h1>
 
-        <form action="processaredicao.php">
+        <form action="processaredicao.php" method="post">
             <fieldset>
                 <legend>Edição de Usuário</legend>
 
@@ -67,7 +67,7 @@ if (isset($_POST['id'])) {
 
     </main>
 
-    <?php include '../inc/rodape.inc.php'; ?>
+    <?php include '../../padrao/rodape.inc.php'; ?>
 
 </body>
 
