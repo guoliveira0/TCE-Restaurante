@@ -34,7 +34,7 @@ class Util
     {
         session_start();
         if ($_SESSION['perfil'] == 'gerente') {
-            header("Location:../usuarios/gerente/index.php");
+            //header("Location:../gerente/index.php");
         } else {
             header("Location:403.php");
         }

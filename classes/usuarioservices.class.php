@@ -58,4 +58,18 @@ class UsuarioServices
         R::close();
         return $usuarios;
     }
+    public static function procurarPorId($id){
+
+        require_once 'r.class.php';
+        
+        R::setup(
+            'mysql:host=127.0.0.1;dbname=sistemarestaurante',
+            'root',
+            ''
+        );
+
+        $usuario = R::load('usuario', $id);
+        R::close();
+        return $usuario;
+    }
 }
