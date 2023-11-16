@@ -21,7 +21,29 @@
         <li><a href="cadastrarnoticias.php">Cadastro de notícias</a></li>
         
     </ul>
-    
+    <?php
+    require_once '../../classes/r.class.php';
+            
+    R::setup(
+        'mysql:host=127.0.0.1;dbname=sistemarestaurante',
+        'root',
+        ''
+    );
+    // Criando uma lista de noticias de acordo cm o bd
+    $noticias = R::findAll('noticias', ' ORDER BY id DESC')
+    // Talvez # -> 'ORDER BY id DESC LIMIT 3' funcione
+    ?>
+
+    <h2>Notícias</h2>
+    <?php 
+    foreach ($noticias as $noticia) { ?>
+        <div class="noticia">
+            <p><?= substr($noticia->conteudo, 0, 100) . '...' ?></p>  <!-- Para aparecer '...' quando ultrapassa 100 caracteres !-->
+        </div>
+    <?php } ?>
+
+    <p><a href="todasnoticias.php">Mais notícias</a></p>
+
     </main>
 
     <?php include '../inc/rodape.inc.php';?>
