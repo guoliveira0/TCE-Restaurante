@@ -32,14 +32,14 @@
         <!-- Código para aparecer as noticias -->
         <?php
         // Criando uma lista de noticias de acordo cm o bd
-        $noticias = R::findAll('noticias', '#');
+        $noticias = R::findAll('noticias', ' ORDER BY id DESC')
         // Talvez # -> 'ORDER BY id DESC LIMIT 3' funcione
         ?>
 
-        <?php foreach ($noticias as $noticia) { ?>
-            <div class="news">
-                <h2><?= $noticia->titulo ?></h2>
-                <p><?= nl2br($noticia->conteudo) ?></p>  <!-- a função n12br é pra converter o /n pra <br>-->
+        <?php 
+        foreach ($noticias as $noticia) { ?>
+            <div class="noticia">
+                <p><?= substr($noticia->conteudo, 0, 100) . '...' ?></p>  <!-- Para aparecer '...' quando ultrapassa 100 caracteres !-->
             </div>
         <?php } ?>
 
