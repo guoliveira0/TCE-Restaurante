@@ -12,7 +12,7 @@
     <title>Restaurante</title>
 </head>
 <body>
-    <?php include '../inc/cabecalho.inc.php';?>
+    <?php include './padrao/cabecalho.inc.php';?>
 
     <main>
     <h1>Gerente</h1>
