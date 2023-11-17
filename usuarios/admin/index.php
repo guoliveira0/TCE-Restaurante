@@ -1,6 +1,6 @@
 <?php
-//require_once '../../classes/util.class.php';
-//Util::isAdmin()
+require_once '../../classes/util.class.php';
+Util::isAdmin();
 
 ?>
 
@@ -13,12 +13,16 @@
     <title>Restaurante</title>
 </head>
 <body>
-    <?php include '../inc/cabecalho.inc.php';?>
+    <?php include '../../padrao/cabecalho.inc.php';?>
 
     <main>
     <h1>Admin</h1>
     <ul>
         <li><a href="cadastrarnoticias.php">Cadastro de notícias</a></li>
+        <li><a href="cadastrarusuarios.php">Cadastro de Usuários</a></li>
+        <li><a href="escolherusuario.php">Edição de Usuários</a></li>
+        <li><a href="relatoriousuarios.php">Relatório Usuários</a></li>
+       
         
     </ul>
     <?php
@@ -46,6 +50,6 @@
 
     </main>
 
-    <?php include '../inc/rodape.inc.php';?>
+    <?php include '../../padrao/rodape.inc.php';?>
 </body>
 </html>

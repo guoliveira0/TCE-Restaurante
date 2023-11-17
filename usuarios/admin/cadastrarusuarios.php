@@ -1,3 +1,13 @@
+<?php
+
+require_once '../../classes/util.class.php';
+Util::isAdmin();
+
+?>
+
+
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -8,7 +18,7 @@
 </head>
 
 <body>
-    <?php include 'inc/cabecalho.inc.php'; ?>
+    <?php include '../../padrao/cabecalho.inc.php'; ?>
 
     <main>
       <form action="cadastrarusuarios.php" method="post">
@@ -24,6 +34,8 @@
             <select name="perfis" id="perfis">
               <option value="caixa">Caixa</option>
               <option value="cliente">Cliente</option>
+              <option value="gerente">Gerente</option>
+              <option value="admin">Administrador</option>
             </select>
             <input type="submit" value="Cadastrar">
         </fieldset>
@@ -33,7 +45,7 @@
       UsuarioServices::salvar($_POST['nome'], $_POST['email'], $_POST['senha'], $_POST['perfis'] );
       ?>
     </main>
-    <?php include 'inc/rodape.inc.php'; ?>
+    <?php include '../../padrao/rodape.inc.php'; ?>
 </body>
 
 </html>

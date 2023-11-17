@@ -1,7 +1,7 @@
 <?php
 
 require_once '../../classes/util.class.php';
-Util::isGerente();
+Util::isAdmin();
 
 
 if (isset($_POST['id'])) {
@@ -55,8 +55,12 @@ if (isset($_POST['id'])) {
                 <label for="senha">Senha:</label>
                 <input type="password" name="senha" id="senha"><br>
 
-                <label for="admin">Administrador: </label>
-                <input type="checkbox" name="admin" id="admin" <?= $admin == 1? 'checked' : '' ?>><br>
+                <select name="perfis" id="perfis">
+                    <option value="caixa">Caixa</option>
+                    <option value="cliente">Cliente</option>
+                    <option value="gerente">Gerente</option>
+                    <option value="admin">Administrador</option>
+                </select><br>
 
                 <a href="cadastrousuarios.php">Cancelar</a>
                 <input type="submit" value="Salvar">

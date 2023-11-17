@@ -34,7 +34,16 @@ class Util
     {
         session_start();
         if ($_SESSION['perfil'] == 'gerente') {
-            //header("Location:../gerente/index.php");
+      
+        } else {
+            header("Location:403.php");
+        }
+    }
+    public static function isAdmin()
+    {
+        session_start();
+        if ($_SESSION['perfil'] == 'admin') {
+    
         } else {
             header("Location:403.php");
         }
@@ -63,6 +72,9 @@ class Util
             } 
             else if($usuarios['perfil'] == 'caixa'){
                 header('Location:../usuarios/caixa/index.php');
+            }
+            else if($usuarios['perfil'] == 'admin'){
+                header('Location:../usuarios/admin/index.php');
             }
         
             else {

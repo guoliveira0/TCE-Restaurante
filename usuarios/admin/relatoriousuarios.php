@@ -1,3 +1,9 @@
+<?php
+require_once '../../classes/util.class.php';
+Util::isAdmin();
+?>
+
+
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -9,7 +15,7 @@
 </head>
 
 <body>
-    <?php include '../inc/cabecalho.inc.php' ?>
+    <?php include '../../padrao/cabecalho.inc.php' ?>
     <main>
         <h1>Relatório Usuários</h1>
 
@@ -23,7 +29,7 @@
                 <th>Excluir</th>
             </tr>
             <?php
-            require_once '../classes/usuarioservices.class.php';
+            require_once '../../classes/usuarioservices.class.php';
             $usuarios = UsuarioServices::procurar();
             foreach($usuarios as $x){
             ?>
@@ -48,7 +54,7 @@
 
     </main>
 
-    <?php include '../inc/rodape.inc.php' ?>
+    <?php include '../../padrao/rodape.inc.php' ?>
 </body>
 
 </html>

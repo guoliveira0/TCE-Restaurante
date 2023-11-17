@@ -19,6 +19,23 @@ class UsuarioServices
         R::store($usuario);
         R::close();
     }
+    public static function salvarCliente($nome, $email, $senha, $perfil)
+    {
+        require_once 'r.class.php';
+        R::setup(
+            'mysql:host=127.0.0.1;dbname=sistemarestaurante',
+            'root',
+            ''
+        );
+
+        $usuario = R::dispense('usuario');
+        $usuario->email = $email;
+        $usuario->nome = $nome;
+        $usuario->perfil = $perfil;
+        $usuario->senha = md5($senha . '__');
+        R::store($usuario);
+        R::close();
+    }
     public static function excluir($id)
     {
         require_once 'r.class.php';
@@ -72,4 +89,14 @@ class UsuarioServices
         R::close();
         return $usuario;
     }
+    public static function procurarClientes(){
+        require_once 'r.class.php';
+        R::setup('mysql:host=127.0.0.1;dbname=sistemarestaurante', 'root', '');
+
+        $usuarios = R::findAll('usuario', 'perfil = \'cliente\'');
+        R::close();
+        return $usuarios;
+    }
+    
+    
 }

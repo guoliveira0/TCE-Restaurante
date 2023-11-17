@@ -1,6 +1,6 @@
 <?php
-//require_once '../../classes/util.class.php';
-//Util::isGerente()
+require_once '../../classes/util.class.php';
+Util::isGerente()
 
 ?>
 <!DOCTYPE html>
@@ -12,14 +12,13 @@
     <title>Restaurante</title>
 </head>
 <body>
-    <?php include './padrao/cabecalho.inc.php';?>
+    <?php include '../../padrao/cabecalho.inc.php';?>
 
     <main>
     <h1>Gerente</h1>
     <ul>
-        <li><a href="cadastrarusuarios.php">Cadastro de Usuários</a></li>
-        <li><a href="editarusuarios.php">Edição de Usuários</a></li>
-        <li><a href="relatoriousuarios.php">Relatório Usuários</a></li>
+        <li><a href="cadastrocliente.php">Cadastro de Clientes</a></li>
+        <li><a href="relatorioclientes.php">Relatório de Clientes</a></li>
         <li><a href="cadastrarnoticias.php">Cadastro de Notícia</a></li>
         
     </ul>
@@ -50,6 +49,6 @@
         <p><a href="todasnoticias.php">Mais notícias</a></p>
     </main>
 
-    <?php include '../inc/rodape.inc.php';?>
+    <?php include '../../padrao/rodape.inc.php';?>
 </body>
 </html>
