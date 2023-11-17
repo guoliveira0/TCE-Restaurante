@@ -8,7 +8,7 @@
 </head>
 
 <body>
-    <?php include 'inc/cabecalho.inc.php'; ?>
+    <?php include './padrao/cabecalho.inc.php'; ?>
 
     <main>
         <?php
@@ -19,14 +19,6 @@
             'root',
             ''
         );
-
-        /*$usuario = R::dispense('usuario');
-        $usuario->email = 'gerente@email.com';
-        $usuario->nome = 'Gerente1';
-        $usuario->perfil = R::enum(Perfil::Gerente);
-        $usuario->senha = md5(123 . '__');
-        R::store($usuario);
-        R::close();*/
         ?>
 
         <!-- Código para aparecer as noticias -->
@@ -46,7 +38,7 @@
         <p><a href="todasnoticias.php">Mais notícias</a></p>
     </main>
 
-    <?php include 'inc/rodape.inc.php'; ?>
+    <?php include './padrao/rodape.inc.php'; ?>
 </body>
 
 </html>
