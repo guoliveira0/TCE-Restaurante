@@ -1,8 +1,8 @@
 <?php
-//require_once '../../classes/util.class.php';
-//Util::isGerente()
-
+require_once '../../classes/util.class.php';
+Util::isGerente()
 ?>
+
 <?php
 require_once '../../classes/util.class.php';
 Util::isGerente();
