@@ -49,7 +49,7 @@ class UsuarioServices
         R::trash('$usuario', $id);
         R::close();
     }
-    public static function salvarnoticia($titulo,$conteudo)
+    public static function salvarnoticia($conteudo)
     {
         require_once 'r.class.php';
         R::setup(
@@ -60,8 +60,7 @@ class UsuarioServices
         date_default_timezone_get("America/Fortaleza");
 
         $noticia = R::dispense('noticia');
-        $noticia->titulo = $titulo;
-        $noticia->conteudo = nl2br($conteudo);
+        $noticia->conteudo = $conteudo;
         $noticia->data = date('d/m/Y H:i');
 
         R::store($noticia);
