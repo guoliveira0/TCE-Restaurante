@@ -32,7 +32,9 @@ Util::isGerente();
             <input type="password" name="senha" id="senha"><br>
             <input type="hidden" name="perfil" id="perfil" value="cliente">
             <label for="carteira">Habilitar Carteira:</label>
-            <input type="checkbox" name="carteira" id="carteira">
+            <input type="checkbox" name="carteira" id="carteira"><br>
+            <label for="cliente">Habilitar Cliente:</label>
+            <input type="checkbox" name="cliente" id="cliente">
             
            
             <input type="submit" value="Cadastrar">
@@ -40,7 +42,7 @@ Util::isGerente();
       </form>
       <?php
       require_once '../../classes/usuarioservices.class.php';
-      UsuarioServices::salvarCliente($_POST['nome'], $_POST['email'], $_POST['senha'], $_POST['perfil'] );
+      UsuarioServices::salvarCliente($_POST['nome'], $_POST['email'], $_POST['senha'], $_POST['perfil'], isset($_POST['carteira']), isset($_POST['cliente']) );
       ?>
     </main>
     <?php include '../../padrao/rodape.inc.php'; ?>

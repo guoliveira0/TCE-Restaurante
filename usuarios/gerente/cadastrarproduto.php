@@ -1,11 +1,9 @@
 <?php
 
-require_once '../../classes/util.class.php';
-Util::isAdmin();
+//require_once '../../classes/util.class.php';
+//Util::isAdmin();
 
 ?>
-
-
 
 
 <!DOCTYPE html>
@@ -21,27 +19,22 @@ Util::isAdmin();
     <?php include '../../padrao/cabecalho.inc.php'; ?>
 
     <main>
-      <form action="cadastrarusuarios.php" method="post">
+      <form action="cadastrarproduto.php" method="post">
         <fieldset>
             <legend>Cadastrar Usuários</legend>
             <label for="nome">Nome:</label>
             <input type="text" name="nome" id="nome"><br>
-            <label for="email">Email:</label>
-            <input type="email" name="email" id="email"><br>
-            <label for="senha">Senha:</label>
-            <input type="password" name="senha" id="senha"><br>
-            <label for="perfis">Cargos: </label>
-            <select name="perfis" id="perfis">
-              <option value="caixa">Caixa</option>
-              <option value="gerente">Gerente</option>
-              <option value="admin">Administrador</option>
-            </select>
+            <label for="preco">Preço:</label>
+            <input type="number" name="preco" id="preco" step=0.01><br>
+            <label for="codigo">Código:</label>
+            <input type="number" name="codigo" id="codigo">
+           
             <input type="submit" value="Cadastrar">
         </fieldset>
       </form>
       <?php
       require_once '../../classes/usuarioservices.class.php';
-      UsuarioServices::salvar($_POST['nome'], $_POST['email'], $_POST['senha'], $_POST['perfis'] );
+      UsuarioServices::salvarProduto($_POST['nome'], $_POST['preco'], $_POST['codigo']);
       ?>
     </main>
     <?php include '../../padrao/rodape.inc.php'; ?>

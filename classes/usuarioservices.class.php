@@ -19,7 +19,7 @@ class UsuarioServices
         R::store($usuario);
         R::close();
     }
-    public static function salvarCliente($nome, $email, $senha, $perfil, $carteira)
+    public static function salvarCliente($nome, $email, $senha, $perfil, $carteira, $cliente)
     {
         require_once 'r.class.php';
         R::setup(
@@ -34,6 +34,7 @@ class UsuarioServices
         $usuario->perfil = $perfil;
         $usuario->senha = md5($senha . '__');
         $usuario->carteira = $carteira;
+        $usuario->habilitado = $cliente;
         R::store($usuario);
         R::close();
     }
@@ -119,6 +120,26 @@ class UsuarioServices
 
         R::close();
     }
+    public static function salvarProduto($nome ,$preco, $codigo)
+    {
+        require_once 'r.class.php';
+
+        R::setup(
+            'mysql:host=127.0.0.1;dbname=sistemarestaurante',
+            'root',
+            ''
+        );
+
+        $produto = R::dispense('produto');
+
+        $produto->nome = $nome;
+        $produto->preco = $preco;
+        $produto->codigo = $codigo;
+    
+        R::store($produto);
+        R::close();
+    }
+    
     
     
 }

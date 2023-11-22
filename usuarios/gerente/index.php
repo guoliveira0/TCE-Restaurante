@@ -20,6 +20,7 @@ Util::isGerente()
         <li><a href="cadastrocliente.php">Cadastro de Clientes</a></li>
         <li><a href="relatorioclientes.php">Relatório de Clientes</a></li>
         <li><a href="cadastrarnoticias.php">Cadastro de Notícia</a></li>
+        <li><a href="cadastrarproduto.php">Cadastro de Produtos</a></li>
         
     </ul>
 
