@@ -1,6 +1,6 @@
 <?php
-//require_once '../../classes/util.class.php';
-//Util::isAdmin()
+require_once '../../classes/util.class.php';
+Util::isAdmin()
 
 ?>
 
@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <?php include '../inc/cabecalho.inc.php'; ?>
+    <?php include '../../padrao/cabecalho.inc.php';?>
 
     <main>
         <h1>Cadastro de Notícia</h1>
@@ -40,11 +40,15 @@
     </form>
     
       <?php
-      require_once '../../classes/util.class.php';
-      Util::salvarnoticia($_POST['conteudo']); // Checar salvarnoticia em Util!!
+      require_once '../../classes/usuarioservices.class.php';
+
+      if(isset($_POST['conteudo'])){
+        UsuarioServices::salvarnoticia($_POST['conteudo']); 
+      }
       ?>
     </main>
-    <?php include '../inc/rodape.inc.php'; ?>
+    <?php include '../../padrao/rodape.inc.php';?>
+
 </body>
 
 </html>
