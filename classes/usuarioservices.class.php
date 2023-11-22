@@ -97,6 +97,28 @@ class UsuarioServices
         R::close();
         return $usuarios;
     }
+    public static function salvarEdicao($id ,$nome, $email, $senha, $perfil)
+    {
+        require_once 'r.class.php';
+
+        R::setup(
+            'mysql:host=127.0.0.1;dbname=sistemarestaurante',
+            'root',
+            ''
+        );
+
+        $usuario = R::dispense('usuario');
+
+        $usuario->id = $id;
+        $usuario->nome = $nome;
+        $usuario->email = $email;
+        $usuario->senha = md5($senha . '__');
+        $usuario->perfil = $perfil;
+
+        R::store($usuario);
+
+        R::close();
+    }
     
     
 }
