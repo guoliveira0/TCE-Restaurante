@@ -1,7 +1,7 @@
 <?php
 
 require_once '../../classes/util.class.php';
-Util::isGerente();
+Util::isAdmin();
 
 ?>
 
@@ -40,7 +40,7 @@ Util::isGerente();
       </form>
       <?php
       require_once '../../classes/usuarioservices.class.php';
-      UsuarioServices::salvarCliente($_POST['nome'], $_POST['email'], $_POST['senha'], $_POST['perfil'] );
+      UsuarioServices::salvarCliente($_POST['nome'], $_POST['email'], $_POST['senha'], $_POST['perfil'] , $_POST['carteira']);
       ?>
     </main>
     <?php include '../../padrao/rodape.inc.php'; ?>

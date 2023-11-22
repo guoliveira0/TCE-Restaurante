@@ -19,7 +19,7 @@ class UsuarioServices
         R::store($usuario);
         R::close();
     }
-    public static function salvarCliente($nome, $email, $senha, $perfil)
+    public static function salvarCliente($nome, $email, $senha, $perfil, $carteira)
     {
         require_once 'r.class.php';
         R::setup(
@@ -33,6 +33,7 @@ class UsuarioServices
         $usuario->nome = $nome;
         $usuario->perfil = $perfil;
         $usuario->senha = md5($senha . '__');
+        $usuario->carteira = $carteira;
         R::store($usuario);
         R::close();
     }

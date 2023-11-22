@@ -2,7 +2,7 @@
 require_once '../../classes/util.class.php';
 Util::isAdmin();
 
-if(isset($_GET['id'])){
+if(isset($_POST['id'])){
     require_once '../../classes/usuarioservices.class.php';
 
     UsuarioServices::salvarEdicao(
@@ -14,4 +14,4 @@ if(isset($_GET['id'])){
     );
 }
 
-header('Location:/test/sistema/admin/cadastrousuarios.php');
+header('Location:editarusuarios.php');

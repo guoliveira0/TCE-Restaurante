@@ -62,7 +62,7 @@ if (isset($_POST['id'])) {
                     <option value="admin">Administrador</option>
                 </select><br>
 
-                <a href="cadastrousuarios.php">Cancelar</a>
+                <a href="index.php">Cancelar</a>
                 <input type="submit" value="Salvar">
 
             </fieldset>
