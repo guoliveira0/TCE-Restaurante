@@ -3,11 +3,6 @@ require_once '../../classes/util.class.php';
 Util::isGerente()
 ?>
 
-<?php
-require_once '../../classes/util.class.php';
-Util::isGerente();
-?>
-
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
