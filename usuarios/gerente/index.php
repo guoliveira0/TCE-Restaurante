@@ -26,25 +26,24 @@ Util::isGerente()
     <h2>Notícias</h2>
     
     <?php
-        require_once '../../classes/r.class.php';
+    require_once '../../classes/r.class.php';
             
-        
-        R::setup(
-            'mysql:host=127.0.0.1;dbname=sistemarestaurante',
-            'root',
-            ''
-        );
-        // Criando uma lista de noticias de acordo cm o bd
-        $noticias = R::findAll('noticias', ' ORDER BY id DESC')
-        // Talvez # -> 'ORDER BY id DESC LIMIT 3' funcione
-        ?>
-
-        <?php 
-        foreach ($noticias as $noticia) { ?>
-            <div class="noticia">
-                <p><?= substr($noticia->conteudo, 0, 100) . '...' ?></p>  <!-- Para aparecer '...' quando ultrapassa 100 caracteres !-->
-            </div>
-        <?php } ?>
+    R::setup(
+        'mysql:host=127.0.0.1;dbname=sistemarestaurante',
+        'root',
+        ''
+    );
+    // Criando uma lista de noticias de acordo cm o bd
+    $noticias = R::findAll('noticia', ' ORDER BY id DESC')
+    // Talvez # -> 'ORDER BY id DESC LIMIT 3' funcione
+    ?>
+    <?php 
+    foreach ($noticias as $noticia) { ?>
+        <div class="noticia">
+        <p><?= $noticia->conteudo ?></p>
+            <!-- <p> substr($noticia->conteudo, 0, 100) . '...' </p>  Não funcionou bem!-->
+        </div>
+    <?php } ?>
 
         <p><a href="todasnoticias.php">Mais notícias</a></p>
     </main>
