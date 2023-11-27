@@ -39,6 +39,24 @@ class Util
             header("Location:403.php");
         }
     }
+    public static function isCaixa()
+    {
+        session_start();
+        if ($_SESSION['perfil'] == 'caixa') {
+      
+        } else {
+            header("Location:403.php");
+        }
+    }
+    public static function isCliente()
+    {
+        session_start();
+        if ($_SESSION['perfil'] == 'cliente') {
+      
+        } else {
+            header("Location:403.php");
+        }
+    }
     public static function isAdmin()
     {
         session_start();

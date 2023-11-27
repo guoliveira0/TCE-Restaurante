@@ -1,21 +1,22 @@
 <?php
 
 require_once '../../classes/util.class.php';
-Util::isAdmin();
+Util::isGerente();
 
 
-if (isset($_POST['id'])) {
+if (isset($_POST['email'])) {
     require_once '../../classes/usuarioservices.class.php';
 
-    $usuario = UsuarioServices::procurarPorId($_POST['id']);
+    $usuario = UsuarioServices::procurarPorEmail($_POST['email']);
 
     $id = $usuario->id;
     $nome = $usuario->nome;
     $email = $usuario->email;
-    $perfil = $usuario->perfil;
+    $carteira = $usuario->carteira;
+    $habilitado = $usuario->habilitado;
 
 } else {
-    header('Location:cadastrarusuarios.php');
+    header('Location:cadastrocliente.php');
 }
 
 ?>
@@ -29,23 +30,22 @@ if (isset($_POST['id'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/549d3529d7.js" crossorigin="anonymous"></script>
-    <title>Editar Usuários</title>
+    <title>Editar Clientes</title>
 </head>
 
 <body>
-   
+
     <?php
     include '../../padrao/cabecalho.inc.php'; ?>
-    <h1>Editar Usuário</h1>
 
     <main>
-        <h1>Edição de Usuários</h1>
+        <h1>Edição de Clientes</h1>
 
-        <form action="processaredicao.php" method="post">
+        <form action="processaredicaocliente.php" method="post">
             <fieldset>
-                <legend>Edição de Usuário</legend>
+                <legend>Edição de Cliente</legend>
 
-                <input type="hidden" name="id" value="<?= $id?>">
+                <input type="hidden" name="id" value="<?= $id ?>">
 
                 <label for="nome">Nome: </label>
                 <input type="text" name="nome" id="nome" value="<?= $nome ?>"><br>
@@ -56,22 +56,12 @@ if (isset($_POST['id'])) {
                 <label for="senha">Senha:</label>
                 <input type="password" name="senha" id="senha"><br>
 
-                <select name="perfis" id="perfis">
-                    <?php
-                    if($perfil == 'caixa'){
-                        echo "<option value=\"caixa\">Caixa selected</option>";
-                    }
-                    else if($perfil=='gerente'){
-                        echo "<option value=\"gerente\" selected>Gerente</option>";
-                    }
-                    else if($perfil == 'admin'){
-                        echo "<option value=\"admin\" selected>Administrador</option>";
-                    }
-                    
-                    ?>
-                
-    
-                </select><br>
+                <label for="carteira">Carteira: </label>
+                <input type="checkbox" name="carteira" id="carteira" <?php echo ($carteira==1 ? 'checked' : '');?>><br>
+                <label for="habilitado">Habilitado:</label>
+                <input type="checkbox" name="habilitado" id="habilitado" <?php echo ($habilitado==1 ? 'checked' : '');?>><br>
+
+
 
                 <a href="index.php">Voltar</a>
                 <input type="submit" value="Salvar">

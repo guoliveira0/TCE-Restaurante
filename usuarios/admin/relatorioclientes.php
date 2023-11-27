@@ -1,6 +1,6 @@
 <?php
 require_once '../../classes/util.class.php';
-Util::isGerente();
+Util::isAdmin();
 ?>
 
 
@@ -21,7 +21,7 @@ Util::isGerente();
 
         <table>
             <tr>
-            <th>ID</th>
+                <th>ID</th>
                 <th>Nome</th>
                 <th>Email</th>
                 <th>Senha</th>
@@ -32,19 +32,19 @@ Util::isGerente();
             <?php
             require_once '../../classes/usuarioservices.class.php';
             $usuarios = UsuarioServices::procurarClientes();
-            foreach($usuarios as $x){
+            foreach ($usuarios as $x) {
             ?>
-                 <tr>
-                 <td><?=$x->id?></td>
-                 <td><?=$x->nome?></td>
-                 <td><?=$x->email?></td>
-                 <td><?=$x->senha?></td>
-                 <td><?=$x->carteira == 1 ? 'Habilitado' : 'Não habilitado'?></td>
-                 <td><?=$x->habilitado == 1 ? 'Habilitado' : 'Não habilitado'?></td>
-                 <td><a href="excluir.php?id=<?=$x->id?>">Excluir</a></td>
+                <tr>
+                    <td><?= $x->id ?></td>
+                    <td><?= $x->nome ?></td>
+                    <td><?= $x->email ?></td>
+                    <td><?= $x->senha ?></td>
+                    <td><?= $x->carteira == 1 ? 'Habilitado' : 'Não habilitado' ?></td>
+                    <td><?= $x->habilitado == 1 ? 'Habilitado' : 'Não habilitado' ?></td>
+                    <td><a href="excluircliente.php?id=<?= $x->id ?>">Excluir</a></td>
 
                 </tr>
-            
+
             <?php
             }
             ?>

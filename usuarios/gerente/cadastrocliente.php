@@ -23,7 +23,7 @@ Util::isGerente();
     <main>
       <form action="cadastrocliente.php" method="post">
         <fieldset>
-            <legend>Cadastrar Usuários</legend>
+            <legend>Cadastrar Clientes</legend>
             <label for="nome">Nome:</label>
             <input type="text" name="nome" id="nome"><br>
             <label for="email">Email:</label>
@@ -34,15 +34,19 @@ Util::isGerente();
             <label for="carteira">Habilitar Carteira:</label>
             <input type="checkbox" name="carteira" id="carteira"><br>
             <label for="cliente">Habilitar Cliente:</label>
-            <input type="checkbox" name="cliente" id="cliente">
+            <input type="checkbox" name="cliente" id="cliente"><br>
+            <a href="index.php">Voltar</a>
             
            
             <input type="submit" value="Cadastrar">
         </fieldset>
       </form>
       <?php
+      if(isset($_POST['senha'])){
       require_once '../../classes/usuarioservices.class.php';
       UsuarioServices::salvarCliente($_POST['nome'], $_POST['email'], $_POST['senha'], $_POST['perfil'], isset($_POST['carteira']), isset($_POST['cliente']) );
+      header('Location:cadastrocliente.php');
+    }
       ?>
     </main>
     <?php include '../../padrao/rodape.inc.php'; ?>

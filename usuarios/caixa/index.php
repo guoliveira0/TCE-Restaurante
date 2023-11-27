@@ -1,19 +1,24 @@
+<?php
+require_once '../../classes/util.class.php';
+Util::isCaixa();
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Restaurante</title>
+    <title>Página Principal-Caixa</title>
 </head>
 <body>
     <?php include '../../padrao/cabecalho.inc.php';?>
 
 
     <main>
-    <h1>Caixa</h1>
+    <h1>Página Principal-Caixa</h1>
     <ul>
-        <li><a href="">COisa</a></li>
+        <li><a href="cadastrovenda.php">Cadastrar Venda</a></li>
     </ul>
 
     <?php

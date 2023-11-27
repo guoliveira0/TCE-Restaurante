@@ -48,7 +48,7 @@ class UsuarioServices
                 ''
             );
         }
-        R::trash('$usuario', $id);
+        R::trash('usuario', $id);
         R::close();
     }
     public static function salvarnoticia($conteudo)
@@ -68,7 +68,8 @@ class UsuarioServices
         R::store($noticia);
         R::close();
     }
-    public static function procurar(){
+    public static function procurar()
+    {
         require_once 'r.class.php';
         R::setup('mysql:host=127.0.0.1;dbname=sistemarestaurante', 'root', '');
 
@@ -76,10 +77,21 @@ class UsuarioServices
         R::close();
         return $usuarios;
     }
-    public static function procurarPorId($id){
+    public static function procurarProduto()
+    {
+        require_once 'r.class.php';
+        R::setup('mysql:host=127.0.0.1;dbname=sistemarestaurante', 'root', '');
+
+        $produtos = R::findAll('produto');
+        R::close();
+        return $produtos;
+    }
+
+    public static function procurarPorId($id)
+    {
 
         require_once 'r.class.php';
-        
+
         R::setup(
             'mysql:host=127.0.0.1;dbname=sistemarestaurante',
             'root',
@@ -90,7 +102,28 @@ class UsuarioServices
         R::close();
         return $usuario;
     }
-    public static function procurarClientes(){
+    public static function procurarPorEmail($email)
+    {
+
+        require_once 'r.class.php';
+
+        R::setup(
+            'mysql:host=127.0.0.1;dbname=sistemarestaurante',
+            'root',
+            ''
+        );
+
+
+        $usuario = R::findOne('usuario', 'email LIKE ?', [$email]);
+        R::close();
+        if($usuario->perfil == 'cliente'){
+            return $usuario;
+        }
+       
+    }
+
+    public static function procurarClientes()
+    {
         require_once 'r.class.php';
         R::setup('mysql:host=127.0.0.1;dbname=sistemarestaurante', 'root', '');
 
@@ -98,7 +131,30 @@ class UsuarioServices
         R::close();
         return $usuarios;
     }
-    public static function salvarEdicao($id ,$nome, $email, $senha, $perfil)
+    public static function salvarEdicaoCliente($id, $nome, $email, $senha, $carteira, $habilitado)
+    {
+        require_once 'r.class.php';
+
+        R::setup(
+            'mysql:host=127.0.0.1;dbname=sistemarestaurante',
+            'root',
+            ''
+        );
+
+        $usuario = R::dispense('usuario');
+
+        $usuario->id = $id;
+        $usuario->nome = $nome;
+        $usuario->email = $email;
+        $usuario->senha = md5($senha . '__');
+        $usuario->carteira = $carteira;
+        $usuario->habilitado = $habilitado;
+        R::store($usuario);
+
+        R::close();
+    }
+
+    public static function salvarEdicao($id, $nome, $email, $senha, $perfil)
     {
         require_once 'r.class.php';
 
@@ -120,7 +176,7 @@ class UsuarioServices
 
         R::close();
     }
-    public static function salvarProduto($nome ,$preco, $codigo)
+    public static function salvarProduto($nome, $preco, $codigo)
     {
         require_once 'r.class.php';
 
@@ -135,11 +191,8 @@ class UsuarioServices
         $produto->nome = $nome;
         $produto->preco = $preco;
         $produto->codigo = $codigo;
-    
+
         R::store($produto);
         R::close();
     }
-    
-    
-    
 }

@@ -1,17 +1,18 @@
 <?php
 require_once '../../classes/util.class.php';
-Util::isAdmin();
+Util::isGerente();
 
 if(isset($_POST['id'])){
     require_once '../../classes/usuarioservices.class.php';
 
-    UsuarioServices::salvarEdicao(
+    UsuarioServices::salvarEdicaoCliente(
         $_POST['id'],
         $_POST['nome'],
         $_POST['email'],
         $_POST['senha'],
-        $_POST['perfis']
+        isset($_POST['carteira']),
+        isset($_POST['habilitado'])
     );
 }
 
-header('Location:escolherusuario.php');
+header('Location:editarcliente.php');
