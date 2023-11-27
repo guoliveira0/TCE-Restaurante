@@ -23,7 +23,6 @@
             ''
         );
         ?>
-
         <!-- Código para aparecer as noticias -->
         <?php
         // Criando uma lista de noticias de acordo cm o bd
@@ -32,15 +31,13 @@
         ?>
 
         <h2>Notícias</h2>
-            <?php 
-            foreach ($noticias as $noticia) { ?>
-                <div class="noticia">
-                <p><?= $noticia->conteudo ?></p>
-                    <!-- <p> substr($noticia->conteudo, 0, 100) . '...' </p>  Não funcionou bem!-->
-                </div>
-            <?php } ?>
+        <?php foreach ($noticias as $noticia) { ?>
+            <div class="noticia">
+                <p><?= substr($noticia->conteudo, 0, 100) . '...' ?></p> 
+            </div>
+        <?php } ?>
 
-        <p><a href="todasnoticias.php">Mais notícias</a></p>
+    <p><a href="todasnoticias.php">Mais notícias</a></p>
     </main>
 
     <?php include './padrao/rodape.inc.php'; ?>
