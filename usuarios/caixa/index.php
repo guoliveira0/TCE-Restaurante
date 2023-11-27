@@ -35,13 +35,12 @@ Util::isCaixa();
     ?>
 
     <h2>Notícias</h2>
-    <?php 
-    foreach ($noticias as $noticia) { ?>
+    <?php foreach ($noticias as $noticia) { ?>
         <div class="noticia">
-        <p><?= $noticia->conteudo ?></p>
-            <!-- <p> substr($noticia->conteudo, 0, 100) . '...' </p>  Não funcionou bem!-->
+            <p><?= substr($noticia->conteudo, 0, 100) . '...' ?></p> 
         </div>
     <?php } ?>
+    
 
     <p><a href="todasnoticias.php">Mais notícias</a></p>
 
