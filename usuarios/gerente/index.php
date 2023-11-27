@@ -24,8 +24,6 @@ Util::isGerente()
         <li><a href="escolhercliente.php">Editar Clientes</a></li>
         
     </ul>
-
-    <h2>Notícias</h2>
     
     <?php
     require_once '../../classes/r.class.php';
@@ -39,11 +37,10 @@ Util::isGerente()
     $noticias = R::findAll('noticia', ' ORDER BY id DESC')
     // Talvez # -> 'ORDER BY id DESC LIMIT 3' funcione
     ?>
-    <?php 
-    foreach ($noticias as $noticia) { ?>
+    <h2>Notícias</h2>
+    <?php foreach ($noticias as $noticia) { ?>
         <div class="noticia">
-        <p><?= $noticia->conteudo ?></p>
-            <!-- <p> substr($noticia->conteudo, 0, 100) . '...' </p>  Não funcionou bem!-->
+            <p><?= substr($noticia->conteudo, 0, 100) . '...' ?></p> 
         </div>
     <?php } ?>
 
