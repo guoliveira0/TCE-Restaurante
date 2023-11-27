@@ -14,3 +14,5 @@
         $usuario->senha = md5(123 . '__');
         R::store($usuario);
         R::close();
+        header('Location:index.php');
+     

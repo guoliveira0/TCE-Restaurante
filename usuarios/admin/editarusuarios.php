@@ -4,15 +4,24 @@ require_once '../../classes/util.class.php';
 Util::isAdmin();
 
 
+
 if (isset($_POST['id'])) {
     require_once '../../classes/usuarioservices.class.php';
 
     $usuario = UsuarioServices::procurarPorId($_POST['id']);
 
+ if($usuario->perfil !== 'cliente'){
     $id = $usuario->id;
     $nome = $usuario->nome;
     $email = $usuario->email;
-    $perfil = $usuario->perfil;
+    $perfil = $usuario->perfil;}
+else{
+    
+    echo ("<script>alert(\"Usuário não pode ser cliente!\");</script>");
+   
+    echo("<meta http-equiv=\"refresh\" content=\"0;url=escolherusuario.php\"> ");
+    exit;
+}
 
 } else {
     header('Location:cadastrarusuarios.php');
@@ -22,6 +31,7 @@ if (isset($_POST['id'])) {
 
 <!DOCTYPE html>
 <html lang="pt-br">
+   
 
 <head>
     <meta charset="UTF-8">
@@ -59,17 +69,23 @@ if (isset($_POST['id'])) {
                 <select name="perfis" id="perfis">
                     <?php
                     if($perfil == 'caixa'){
-                        echo "<option value=\"caixa\">Caixa selected</option>";
+                        echo "<option value=\"caixa\" selected>Caixa</option>";
+                        echo "<option value=\"admin\">Administrador</option>";
+                        echo "<option value=\"gerente\">Gerente</option>";
                     }
                     else if($perfil=='gerente'){
                         echo "<option value=\"gerente\" selected>Gerente</option>";
+                        echo "<option value=\"admin\">Administrador</option>";
+                        echo "<option value=\"caixa\">Caixa</option>";
                     }
                     else if($perfil == 'admin'){
                         echo "<option value=\"admin\" selected>Administrador</option>";
+                        echo "<option value=\"caixa\">Caixa</option>";
+                        echo "<option value=\"admin\">Administrador</option>";
                     }
                     
                     ?>
-                
+            
     
                 </select><br>
 
