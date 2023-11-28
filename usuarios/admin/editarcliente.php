@@ -8,12 +8,22 @@ if (isset($_POST['email'])) {
     require_once '../../classes/usuarioservices.class.php';
 
     $usuario = UsuarioServices::procurarPorEmail($_POST['email']);
+    if($usuario->perfil == 'cliente'){
+        $id = $usuario->id;
+        $nome = $usuario->nome;
+        $email = $usuario->email;
+        $carteira = $usuario->carteira;
+        $habilitado = $usuario->habilitado;
+    }
+    else{
+    
+        echo ("<script>alert(\"Usuário escolhido não é um cliente!\");</script>");
+       
+        echo("<meta http-equiv=\"refresh\" content=\"0;url=escolhercliente.php\"> ");
+        exit;
+    }
 
-    $id = $usuario->id;
-    $nome = $usuario->nome;
-    $email = $usuario->email;
-    $carteira = $usuario->carteira;
-    $habilitado = $usuario->habilitado;
+   
 
 } else {
     header('Location:cadastrocliente.php');
