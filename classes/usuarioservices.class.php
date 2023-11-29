@@ -10,16 +10,28 @@ class UsuarioServices
             'root',
             ''
         );
+        $usuarios = R::findOne('usuario', 'email LIKE ?', [$email]);
+      
+            if($usuarios->email == $email){
+                echo ("<script>alert(\"Email já cadastrado\");</script>");
+                echo("<meta http-equiv=\"refresh\" content=\"0;url=../../usuarios/admin/cadastrarusuarios.php\"> ");
+                exit;
+            
 
-        $usuario = R::dispense('usuario');
-        $usuario->email = $email;
-        $usuario->nome = $nome;
-        $usuario->perfil = $perfil;
-        $usuario->senha = md5($senha . '__');
-        R::store($usuario);
-        R::close();
+            }else{
+                $usuario = R::dispense('usuario');
+                $usuario->email = $email;
+                $usuario->nome = $nome;
+                $usuario->perfil = $perfil;
+                $usuario->senha = md5($senha . '__');
+                R::store($usuario);
+                R::close();
+            }
+        
+
+      
     }
-    public static function salvarCliente($nome, $email, $senha, $perfil, $carteira, $cliente)
+    public static function salvarCliente($nome, $email, $senha, $perfil, $pin, $carteira, $cliente)
     {
         require_once 'r.class.php';
         R::setup(
@@ -27,16 +39,60 @@ class UsuarioServices
             'root',
             ''
         );
+        $usuarios = R::findOne('usuario', 'email LIKE ?', [$email]);
+            if($usuarios->email == $email){
+                echo ("<script>alert(\"Email já cadastrado\");</script>");
+                echo("<meta http-equiv=\"refresh\" content=\"0;url=../../usuarios/admin/cadastrocliente.php\"> ");
+                exit;
+            
+ 
+            }else{
+                $usuario = R::dispense('usuario');
+                $usuario->email = $email;
+                $usuario->nome = $nome;
+                $usuario->perfil = $perfil;
+                $usuario->senha = md5($senha . '__');
+                $usuario->pin = $pin;
+                $usuario->carteira = $carteira;
+                $usuario->habilitado = $cliente;
+                R::store($usuario);
+                R::close();
+            }
 
-        $usuario = R::dispense('usuario');
-        $usuario->email = $email;
-        $usuario->nome = $nome;
-        $usuario->perfil = $perfil;
-        $usuario->senha = md5($senha . '__');
-        $usuario->carteira = $carteira;
-        $usuario->habilitado = $cliente;
-        R::store($usuario);
-        R::close();
+
+    
+    }
+    public static function salvarClienteGerente($nome, $email, $senha, $perfil, $pin, $carteira, $cliente)
+    {
+        require_once 'r.class.php';
+        R::setup(
+            'mysql:host=127.0.0.1;dbname=sistemarestaurante',
+            'root',
+            ''
+        );
+        $usuarios = R::findOne('usuario', 'email LIKE ?', [$email]);
+       
+            if($usuarios->email==$email){
+                echo ("<script>alert(\"Email já cadastrado\");</script>");
+                echo("<meta http-equiv=\"refresh\" content=\"0;url=../../usuarios/gerente/cadastrocliente.php\"> ");
+                exit;
+            
+ 
+            }else{
+                $usuario = R::dispense('usuario');
+                $usuario->email = $email;
+                $usuario->nome = $nome;
+                $usuario->perfil = $perfil;
+                $usuario->senha = md5($senha . '__');
+                $usuario->pin = $pin;
+                $usuario->carteira = $carteira;
+                $usuario->habilitado = $cliente;
+                R::store($usuario);
+                R::close();
+            }
+        
+
+    
     }
     public static function excluir($id)
     {
@@ -131,7 +187,7 @@ class UsuarioServices
         R::close();
         return $usuarios;
     }
-    public static function salvarEdicaoCliente($id, $nome, $email, $senha, $carteira, $habilitado)
+    public static function salvarEdicaoCliente($id, $nome, $email, $senha,$pin, $carteira, $habilitado)
     {
         require_once 'r.class.php';
 
@@ -147,6 +203,7 @@ class UsuarioServices
         $usuario->nome = $nome;
         $usuario->email = $email;
         $usuario->senha = md5($senha . '__');
+        $usuario->pin = $pin;
         $usuario->carteira = $carteira;
         $usuario->habilitado = $habilitado;
         R::store($usuario);
