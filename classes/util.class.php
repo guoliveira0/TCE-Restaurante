@@ -100,7 +100,7 @@ class Util
             }
         } else {
 
-            header('Location:../index.php');
+            header('Location:../index.php?naoautenticado');
         }
         R::close();
         //return count($usuarios) > 0;
