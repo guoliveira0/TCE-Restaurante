@@ -48,7 +48,7 @@ Util::isAdmin();
     </div>
     <?php } ?>
 
-    <p><a href="todasnoticias.php">Mais notícias</a></p>
+    <p><a href="todasnoticias.php">Ver notícias</a></p>
 
     </main>
 

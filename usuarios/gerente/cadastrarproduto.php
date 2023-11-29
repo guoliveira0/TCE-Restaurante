@@ -25,9 +25,9 @@ Util::isGerente();
             <label for="nome">Nome:</label>
             <input type="text" name="nome" id="nome"><br>
             <label for="preco">Preço:</label>
-            <input type="number" name="preco" id="preco" step=0.01><br>
+            <input type="number" name="preco" id="preco" min="0.01" step=0.01><br>
             <label for="codigo">Código:</label>
-            <input type="number" name="codigo" id="codigo"><br>
+            <input type="number" name="codigo" id="codigo" min="1000" max="9999" ><br>
             <a href="index.php">Voltar</a>
             <input type="submit" value="Cadastrar">
         </fieldset>

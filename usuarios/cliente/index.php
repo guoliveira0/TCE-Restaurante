@@ -19,6 +19,27 @@ Util::isCliente();
         <li><a href="historicodeconsumo.php">Histórico de Consumo</a></li>
     </ul>
     
+    <?php
+            require_once '../../classes/r.class.php';
+                    
+            R::setup(
+                'mysql:host=127.0.0.1;dbname=sistemarestaurante',
+                'root',
+                ''
+            );
+            // Criando uma lista de noticias de acordo cm o bd
+            $noticias = R::findAll('noticia', ' ORDER BY id DESC')
+            // Talvez # -> 'ORDER BY id DESC LIMIT 3' funcione
+        ?>
+        
+    <h2>Notícias</h2>
+    <?php foreach ($noticias as $noticia) { ?>
+        <div class="noticia">
+            <p><?= substr($noticia->conteudo, 0, 100) . '...' ?></p> 
+        </div>
+    <?php } ?>
+
+    <p><a href="todasnoticias.php">Ver notícias</a></p>
         
     </main>
 

@@ -4,19 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Página Principal</title>
+    <title>Todas Noticias</title>
 </head>
 
 <body>
-    <?php include './padrao/cabecalho.inc.php'; ?>
+    <?php include '../../padrao/cabecalho.inc.php';?>
 
     <main>
-        <h1>Página Principal</h1>
-        <ul>
-            <li><a href="relatorioprodutos.php">Relatório de Produtos</a></li>
-        </ul>
+        <h1>Todas notícias</h1>
         <?php
-        require_once 'classes/r.class.php';
+        require_once '../../classes/r.class.php';
+
         R::setup(
             'mysql:host=127.0.0.1;dbname=sistemarestaurante',
             'root',
@@ -29,18 +27,18 @@
         $noticias = R::findAll('noticia', ' ORDER BY id DESC')
         // Talvez # -> 'ORDER BY id DESC LIMIT 3' funcione
         ?>
-
-        <h2>Notícias</h2>
-        <?php foreach ($noticias as $noticia) { ?>
+        <?php 
+        foreach ($noticias as $noticia) { ?>
             <div class="noticia">
-                <p><?= substr($noticia->conteudo, 0, 100) . '...' ?></p> 
+            <p><?= $noticia->conteudo ?></p>
             </div>
         <?php } ?>
 
-    <p><a href="todasnoticias.php">Ver notícias</a></p>
+    <p><a href="index.php">Página inicial</a></p>
     </main>
 
-    <?php include './padrao/rodape.inc.php'; ?>
+    <?php include '../../padrao/rodape.inc.php';?>
+
 </body>
 
 </html>
