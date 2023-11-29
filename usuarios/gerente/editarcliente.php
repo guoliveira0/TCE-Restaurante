@@ -56,6 +56,9 @@ if (isset($_POST['email'])) {
                 <label for="senha">Senha:</label>
                 <input type="password" name="senha" id="senha"><br>
 
+                <label for="pin">Pin:</label>
+                <input type="number" name="pin" id="pin"><br>
+
                 <label for="carteira">Carteira: </label>
                 <input type="checkbox" name="carteira" id="carteira" <?php echo ($carteira==1 ? 'checked' : '');?>><br>
                 <label for="habilitado">Habilitado:</label>

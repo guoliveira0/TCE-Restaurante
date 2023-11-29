@@ -32,7 +32,7 @@ Util::isGerente();
             <input type="password" name="senha" id="senha"><br>
             <input type="hidden" name="perfil" id="perfil" value="cliente">
             <label for="pin">Pin:</label>
-            <input type="number" name="pin" id="pin">
+            <input type="number" name="pin" id="pin"><br>
             <label for="carteira">Habilitar Carteira:</label>
             <input type="checkbox" name="carteira" id="carteira"><br>
             <label for="cliente">Habilitar Cliente:</label>

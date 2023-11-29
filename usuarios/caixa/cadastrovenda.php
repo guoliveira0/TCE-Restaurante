@@ -13,7 +13,7 @@ Util::isCaixa();
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Restaurante</title>
+  <title>Cadastrar Venda</title>
 </head>
 
 <body>
@@ -24,9 +24,10 @@ Util::isCaixa();
     <form action="cadastrovenda.php" method="post">
       <fieldset>
         <legend>Cadastrar Usuários</legend>
-        <label for="nome">Nome:</label>
-        <input type="text" name="nome" id="nome"><br>
-        <label for="preco">Preço:</label>
+        <label for="codigo">Codigo Venda:</label>
+        <input type="number" name="codigo" id="codigo">
+        <input type="date" name="data" id="data"  value="<?php echo date('Y-m-d'); ?>">
+        <label for="quantidade">Quantidade:</label>
         <input type="number" name="preco" id="preco" step=0.01><br>
         <label for="codigo">Código:</label>
         <input type="number" name="codigo" id="codigo">

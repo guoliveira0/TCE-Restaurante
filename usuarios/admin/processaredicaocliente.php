@@ -10,6 +10,7 @@ if(isset($_POST['id'])){
         $_POST['nome'],
         $_POST['email'],
         $_POST['senha'],
+        $_POST['pin'],
         isset($_POST['carteira']),
         isset($_POST['habilitado'])
     );
