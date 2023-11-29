@@ -33,6 +33,8 @@ Util::isAdmin();
             <label for="senha">Senha:</label>
             <input type="password" name="senha" id="senha" required><br>
             <input type="hidden" name="perfil" id="perfil" value="cliente">
+            <label for="pin">Pin:</label>
+            <input type="number" name="pin" id="pin">
             <label for="carteira">Habilitar Carteira:</label>
             <input type="checkbox" name="carteira" id="carteira"><br>
             <label for="cliente">Habilitar Cliente:</label>
@@ -44,7 +46,7 @@ Util::isAdmin();
       <?php
       if(isset($_POST['senha'])){
       require_once '../../classes/usuarioservices.class.php';
-      UsuarioServices::salvarCliente($_POST['nome'], $_POST['email'], $_POST['senha'], $_POST['perfil'] , isset($_POST['carteira']), isset($_POST['cliente']));
+      UsuarioServices::salvarCliente($_POST['nome'], $_POST['email'], $_POST['senha'], $_POST['perfil'] , $_POST['pin'], isset($_POST['carteira']), isset($_POST['cliente']));
       header('Location:cadastrocliente.php');}
      
       ?>

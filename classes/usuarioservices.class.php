@@ -31,7 +31,7 @@ class UsuarioServices
 
       
     }
-    public static function salvarCliente($nome, $email, $senha, $perfil, $carteira, $cliente)
+    public static function salvarCliente($nome, $email, $senha, $perfil, $pin, $carteira, $cliente)
     {
         require_once 'r.class.php';
         R::setup(
@@ -52,6 +52,7 @@ class UsuarioServices
                 $usuario->nome = $nome;
                 $usuario->perfil = $perfil;
                 $usuario->senha = md5($senha . '__');
+                $usuario->pin = $pin;
                 $usuario->carteira = $carteira;
                 $usuario->habilitado = $cliente;
                 R::store($usuario);
@@ -61,7 +62,7 @@ class UsuarioServices
 
     
     }
-    public static function salvarClienteGerente($nome, $email, $senha, $perfil, $carteira, $cliente)
+    public static function salvarClienteGerente($nome, $email, $senha, $perfil, $pin, $carteira, $cliente)
     {
         require_once 'r.class.php';
         R::setup(
@@ -83,6 +84,7 @@ class UsuarioServices
                 $usuario->nome = $nome;
                 $usuario->perfil = $perfil;
                 $usuario->senha = md5($senha . '__');
+                $usuario->pin = $pin;
                 $usuario->carteira = $carteira;
                 $usuario->habilitado = $cliente;
                 R::store($usuario);
@@ -185,7 +187,7 @@ class UsuarioServices
         R::close();
         return $usuarios;
     }
-    public static function salvarEdicaoCliente($id, $nome, $email, $senha, $carteira, $habilitado)
+    public static function salvarEdicaoCliente($id, $nome, $email, $senha,$pin, $carteira, $habilitado)
     {
         require_once 'r.class.php';
 
@@ -201,6 +203,7 @@ class UsuarioServices
         $usuario->nome = $nome;
         $usuario->email = $email;
         $usuario->senha = md5($senha . '__');
+        $usuario->pin = $pin;
         $usuario->carteira = $carteira;
         $usuario->habilitado = $habilitado;
         R::store($usuario);
