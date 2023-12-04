@@ -23,19 +23,38 @@ Util::isCaixa();
       <fieldset>
         <legend>Cadastrar Usuários</legend>
         <label for="codigo">Codigo Venda:</label>
-        <input type="number" name="codigo" id="codigo">
-        <input type="date" name="data" id="data"  value="<?php echo date('Y-m-d'); ?>">
-        <label for="quantidade">Quantidade:</label>
-        <input type="number" name="preco" id="preco" step=0.01><br>
-        <label for="codigo">Código:</label>
-        <input type="number" name="codigo" id="codigo">
+        <input type="number" name="codigo" id="codigo" require><br>
+        <input type="date" name="data" id="data" value="<?php echo date('Y-m-d'); ?>" hidden>
+        <label for="pin">Pin do Cliente:</label>
+        <input type="number" name="pin" id="pin"><br>
+        <label for="produtos">Produtos:</label>
+        <select name="produtos" id="produtos">
+          <?php
+            require_once '../../classes/usuarioservices.class.php';
+            $produtos = UsuarioServices::procurarProdutos();
+            foreach($produtos  as $x){
+              echo"<option value = \"$x->codigo\" >$x->nome</option>";
+            }
 
+          ?>
+        </select><br>
+        <label for="quantidade">Quantidade:</label>
+        <input type="number" name="quantidade" id="quantidade"><br>
+        <label for="aprazo">A prazo:</label>
+        <input type="checkbox" name="aprazo" id="aprazo"><br>
         <input type="submit" value="Cadastrar">
       </fieldset>
     </form>
     <?php
-    require_once '../../classes/usuarioservices.class.php';
-    UsuarioServices::salvarProduto($_POST['nome'], $_POST['preco'], $_POST['codigo']);
+    if(isset($_POST['codigo'])){
+      //require_once '../../classes/usuarioservices.class.php';
+      $subtotal = UsuarioServices::calcularSubtotal($_POST['produtos'], $_POST['quantidade']);
+      $pin = UsuarioServices::procurarPorPin($_POST['pin']);
+      UsuarioServices::SalvarVenda($_POST['codigo'], $_POST['data'], $subtotal, $pin->pin, isset($_POST['aprazo']));
+    }
+
+    
+
     ?>
   </main>
   <?php include '../../padrao/rodape.inc.php'; ?>

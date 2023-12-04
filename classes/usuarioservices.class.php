@@ -31,6 +31,45 @@ class UsuarioServices
 
       
     }
+    public static function salvarVenda($codigo,$data,$subtotal,$pin, $aprazo)
+    {
+        require_once 'r.class.php';
+        if(!R::testConnection()){
+        R::setup(
+            'mysql:host=127.0.0.1;dbname=sistemarestaurante',
+            'root',
+            ''
+        );
+    }
+       $vendas = R::findOne('venda', 'codigo LIKE ?', [$codigo]);
+      
+            if($vendas->codigo == $codigo){
+                echo ("<script>alert(\"Código já cadastrado\");</script>");
+                echo("<meta http-equiv=\"refresh\" content=\"0;url=../../usuarios/caixa/cadastrovenda.php\"> ");
+                exit;
+            
+
+            }else{
+                $venda = R::dispense('venda');
+                $venda->codigo = $codigo;
+                $venda->data = $data;
+                $venda->subtotal = $subtotal;
+                $venda->pin = $pin;
+                if($aprazo == false){
+                    $venda->dataPagamento = date('Y-m-d');
+                }else{
+                    $venda->dataPagamento = null;
+                }
+                
+
+                R::store($venda);
+                R::close();
+            }
+        
+        
+
+      
+    }
     public static function salvarCliente($nome, $email, $senha, $perfil, $pin, $carteira, $cliente)
     {
         require_once 'r.class.php';
@@ -133,15 +172,7 @@ class UsuarioServices
         R::close();
         return $usuarios;
     }
-    public static function procurarProduto()
-    {
-        require_once 'r.class.php';
-        R::setup('mysql:host=127.0.0.1;dbname=sistemarestaurante', 'root', '');
 
-        $produtos = R::findAll('produto');
-        R::close();
-        return $produtos;
-    }
 
     public static function procurarPorId($id)
     {
@@ -177,6 +208,27 @@ class UsuarioServices
         }
        
     }
+    public static function procurarPorPin($pin)
+    {
+
+        require_once 'r.class.php';
+        if(!R::testConnection()){
+        R::setup(
+            'mysql:host=127.0.0.1;dbname=sistemarestaurante',
+            'root',
+            ''
+        );
+    }
+
+
+        $usuario = R::findOne('usuario', 'pin LIKE ?', [$pin]);
+        
+        if($usuario->perfil == 'cliente'){
+            return $usuario;
+        }
+        R::close();
+       
+    }
 
     public static function procurarClientes()
     {
@@ -186,6 +238,15 @@ class UsuarioServices
         $usuarios = R::findAll('usuario', 'perfil = \'cliente\'');
         R::close();
         return $usuarios;
+    }
+    public static function procurarProdutos()
+    {
+        require_once 'r.class.php';
+        R::setup('mysql:host=127.0.0.1;dbname=sistemarestaurante', 'root', '');
+
+        $produtos = R::findAll('produto');
+        R::close();
+        return $produtos;
     }
     public static function salvarEdicaoCliente($id, $nome, $email, $senha,$pin, $carteira, $habilitado)
     {
@@ -252,4 +313,19 @@ class UsuarioServices
         R::store($produto);
         R::close();
     }
+    public static function calcularSubtotal($codigo,$quantidade){
+        require_once 'r.class.php';
+        if(!R::testConnection()){
+        R::setup(
+            'mysql:host=127.0.0.1;dbname=sistemarestaurante',
+            'root',
+            ''
+        );
+    }
+        $produto = R::findOne('produto', 'codigo = ?', [$codigo]);
+        $subtotal = $produto->preco * $quantidade;
+        R::close();
+        return $subtotal;
+    }
+  
 }
