@@ -10,7 +10,7 @@
         <div id="linksheader">
             <nav>
                 <ul>
-                    <li><a href="./relatorioprodutos.php">Produtos</a></li>
+                    <li><a href="/tcd2_luiz_lorena_mariana/relatorioprodutos.php">Produtos</a></li>
                     <li><a href="./todasnoticias.php">Ver todas notícias</a></li>
                 </ul>
             </nav>

@@ -1,8 +1,6 @@
 <?php
-
 require_once '../../classes/util.class.php';
 Util::isGerente();
-
 
 if (isset($_POST['email'])) {
     require_once '../../classes/usuarioservices.class.php';
@@ -18,12 +16,10 @@ if (isset($_POST['email'])) {
 } else {
     header('Location:cadastrocliente.php');
 }
-
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -31,12 +27,13 @@ if (isset($_POST['email'])) {
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/549d3529d7.js" crossorigin="anonymous"></script>
     <title>Editar Clientes</title>
+    <link rel="stylesheet" href="../../styles.css">
+
 </head>
 
 <body>
 
-    <?php
-    include '../../padrao/cabecalho.inc.php'; ?>
+    <?php include '../../padrao/cabecalho.inc.php';?>
 
     <main>
         <h1>Edição de Clientes</h1>
