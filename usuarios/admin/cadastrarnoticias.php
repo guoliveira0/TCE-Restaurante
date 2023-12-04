@@ -12,11 +12,6 @@ Util::isAdmin()
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://cdn.tiny.cloud/1/rsrllxn7v5tmfve49z7wzocog92nwadca6n4s6ytb80bvitc/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     <title>Cadastro Notícias</title>
-    <style>
-        .tox-notification{
-            display: none !important;
-        }
-    </style>
 </head>
 
 <body>

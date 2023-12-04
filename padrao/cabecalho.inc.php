@@ -4,7 +4,7 @@
 
     require_once dirname(__DIR__) . '/classes/util.class.php';
     if (Util::isLog()) {
-        echo "<p>{$_SESSION['usuario']}</p> | <a href=\"/TCE-Restaurante/padrao/logout.php\">Logout</a>";
+        echo "<p>{$_SESSION['usuario']}</p> | <a href=\"/tcd2_luiz_lorena_mariana/padrao/logout.php\">Logout</a>";
 
         //logout
 
