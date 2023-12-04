@@ -3,10 +3,20 @@
     <?php
     require_once dirname(__DIR__) . '/classes/util.class.php';
     if (Util::isLog()) {
-        echo "<p>{$_SESSION['usuario']}</p> | <a href=\"/tcd2_luiz_lorena_mariana/padrao/logout.php\">Logout</a>";
+        echo "<div id=\"usuariologado\">";
+        echo "{$_SESSION['usuario']} | <a href=\"/tcd2_luiz_lorena_mariana/padrao/logout.php\">Logout</a>";
+        echo "<div>";
+    ?>
+        <div id="linksheader">
+            <nav>
+                <ul>
+                    <li><a href="./relatorioprodutos.php">Produtos</a></li>
+                    <li><a href="./todasnoticias.php">Ver todas notícias</a></li>
+                </ul>
+            </nav>
+        </div>
 
-        //logout
-
+    <?php
     } else {
         //form para autenticar
     ?>
@@ -25,17 +35,19 @@
                 ?>
             </form>
         </div>
+
+        <!-- Links do header -->
+        <div id="linksheader">
+            <nav>
+                <ul>
+                    <li><a href="./relatorioprodutos.php">Produtos</a></li>
+                    <li><a href="./todasnoticias.php">Ver todas notícias</a></li>
+                </ul>
+            </nav>
+        </div>
     <?php
     }
     ?>
 
-    <!-- Links do header -->
-    <div id="linksheader">
-        <nav>
-            <ul>
-                <li><a href="#">Produtos</a></li>
-                <li><a href="#">Notícias</a></li>
-            </ul>
-        </nav>
-    </div>
+
 </header>

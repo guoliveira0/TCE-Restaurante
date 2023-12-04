@@ -38,7 +38,8 @@ if (isset($_POST['email'])) {
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/549d3529d7.js" crossorigin="anonymous"></script>
     <title>Editar Clientes</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="../../styles.css">
+
 </head>
 
 <body>

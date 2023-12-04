@@ -1,16 +1,22 @@
 /* Reset de estilos para remover margens e paddings padrão */
-body, ul {
+body,
+ul {
     margin: 0;
     padding: 0;
 }
 
 /* Estilos para o cabeçalho */
+/* Deslogado */
 #login {
     text-align: right;
 }
 
 #linksheader {
-    color:black;
+    color: black;
+}
+
+#usuariologado {
+    text-align: right;
 }
 
 header {
@@ -18,7 +24,7 @@ header {
     padding: 20px;
 }
 
-nav{
+nav {
     text-align: center;
 }
 

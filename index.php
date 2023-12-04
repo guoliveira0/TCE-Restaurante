@@ -13,9 +13,6 @@
 
     <main>
         <h1>Página Principal</h1>
-        <ul>
-            <li><a href="relatorioprodutos.php">Relatório de Produtos</a></li>
-        </ul>
         <?php
         require_once 'classes/r.class.php';
         R::setup(
