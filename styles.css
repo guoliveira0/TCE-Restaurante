@@ -1,0 +1,43 @@
+/* Reset de estilos para remover margens e paddings padrão */
+body, ul {
+    margin: 0;
+    padding: 0;
+}
+
+/* Estilos para o cabeçalho */
+#login {
+    text-align: right;
+}
+
+#linksheader {
+    color:black;
+}
+
+header {
+    background-color: #FFD700;
+    padding: 20px;
+}
+
+nav{
+    text-align: center;
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+    margin: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+nav ul li a:hover {
+    color: #FF4500;
+}

@@ -1,9 +1,6 @@
 <?php
-
 require_once '../../classes/util.class.php';
 Util::isAdmin();
-
-
 
 if (isset($_POST['id'])) {
     require_once '../../classes/usuarioservices.class.php';
@@ -26,13 +23,10 @@ else{
 } else {
     header('Location:cadastrarusuarios.php');
 }
-
 ?>
 
 <!DOCTYPE html>
 <html lang="pt-br">
-   
-
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -40,6 +34,7 @@ else{
     <link rel="stylesheet" href="style.css">
     <script src="https://kit.fontawesome.com/549d3529d7.js" crossorigin="anonymous"></script>
     <title>Editar Usuários</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
