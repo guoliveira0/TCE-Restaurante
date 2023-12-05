@@ -70,6 +70,7 @@ class UsuarioServices
 
       
     }
+    
     public static function salvarCliente($nome, $email, $senha, $perfil, $pin, $carteira, $cliente)
     {
         require_once 'r.class.php';
@@ -227,6 +228,36 @@ class UsuarioServices
             return $usuario;
         }
         R::close();
+       
+    }
+    public static function procurarCarteira($pin)
+    {
+
+        require_once 'r.class.php';
+        if(!R::testConnection()){
+        R::setup(
+            'mysql:host=127.0.0.1;dbname=sistemarestaurante',
+            'root',
+            ''
+        );
+    }
+
+
+        $carteiras = R::findAll('venda');
+        foreach($carteiras as $x){
+            if($x->pin ==$pin){
+                return $x;
+            }else{
+                echo ("<script>alert(\"Pin não encontrado!\");</script>");
+                echo("<meta http-equiv=\"refresh\" content=\"0;url=../../usuarios/caixa/escolhercliente.php\"> ");
+
+            }
+        }
+      
+          
+        
+        R::close();
+   
        
     }
 
