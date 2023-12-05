@@ -25,7 +25,7 @@
             </tr>
             <?php
             require_once 'classes/usuarioservices.class.php';
-            $produtos = UsuarioServices::procurarProduto();
+            $produtos = UsuarioServices::procurarProdutos();
             foreach ($produtos as $x) {
             ?>
                 <tr>
