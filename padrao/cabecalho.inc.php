@@ -1,36 +1,24 @@
 <header>
-
     <?php
     require_once dirname(__DIR__) . '/classes/util.class.php';
     if (Util::isLog()) {
-        echo "<div id=\"usuariologado\">";
-        echo "{$_SESSION['usuario']} | <a href=\"/tcd2_luiz_lorena_mariana/padrao/logout.php\">Logout</a>";
-        echo "<div>";
-    ?>
+        ?>
+    
         <div id="linksheader">
             <nav>
                 <ul>
                     <li><a href="/tcd2_luiz_lorena_mariana/relatorioprodutos.php">Produtos</a></li>
                     <li><a href="./todasnoticias.php">Ver todas notícias</a></li>
-                    <!-- <li class="dropdown">
-                        <a href="./todasnoticias.php">Login</a>
-                        <div class="dropdown-menu">
-                            <div id="menulogin">
-                                <form action="./padrao/autenticar.php" method="post">
-                                    <label for="email">Email: </label>
-                                    <input type="email" name="email" id="email">
-                                    <label for="senha">Senha: </label>
-                                    <input type="password" name="senha" id="senha">
-                                    <input type="submit" value="Enviar">
-                                    <?php
-                                    if (isset($_GET['naoautenticado'])) {
-                                        echo '<br><span id="naoautenticado" style="color:red">Senha ou email incorretos, tente novamente.</span>';
-                                    }
-                                    ?>
-                                </form>
-                            </div>
-                        </div>
-                    </li> -->
+                    <li>|</li>
+                    <?php
+                     echo "<li>";
+                     echo "{$_SESSION['usuario']}";
+                     echo "</li>";
+             
+                     echo "<li>";
+                     echo "<a href=\"/tcd2_luiz_lorena_mariana/padrao/logout.php\">Logout</a>";
+                     echo "</li>";
+                    ?>
                 </ul>
             </nav>
         </div>
@@ -43,7 +31,7 @@
 
         </div>
         <!-- Login -->
-        <div id="login">
+        <!-- <div id="login">
             <form action="./padrao/autenticar.php" method="post">
                 <label for="email">Email: </label>
                 <input type="email" name="email" id="email">
@@ -51,12 +39,12 @@
                 <input type="password" name="senha" id="senha">
                 <input type="submit" value="Enviar">
                 <?php
-                if (isset($_GET['naoautenticado'])) {
-                    echo '<br><span id="naoautenticado" style="color:red">Senha ou email incorretos, tente novamente.</span>';
-                }
+                // if (isset($_GET['naoautenticado'])) {
+                //     echo '<br><span id="naoautenticado" style="color:red">Senha ou email incorretos, tente novamente.</span>';
+                // }
                 ?>
             </form>
-        </div>
+        </div> -->
 
         <!-- Links do header -->
         <div id="linksheader">
@@ -64,6 +52,24 @@
                 <ul>
                     <li><a href="./relatorioprodutos.php">Produtos</a></li>
                     <li><a href="./todasnoticias.php">Ver todas notícias</a></li>
+                    <li>|</li>
+                    <li class="dropdown">
+                        <a href="">Login</a>
+                        <div class="dropdown-menu">
+                            <form action="./padrao/autenticar.php" method="post">
+                                <label for="email">Email: </label>
+                                <input type="email" name="email" id="email"><br><br>
+                                <label for="senha">Senha: </label>
+                                <input type="password" name="senha" id="senha"><br><br>
+                                <input class="entrar" type="submit" value="Entrar">
+                                <?php
+                                if (isset($_GET['naoautenticado'])) {
+                                    echo '<br><span id="naoautenticado" style="color:red">Senha ou email incorretos, tente novamente.</span>';
+                                }
+                                ?>
+                            </form>
+                        </div>
+                    </li>
                 </ul>
             </nav>
         </div>

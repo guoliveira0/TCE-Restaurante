@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Principal</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+    </style>
 </head>
 
 <body>
@@ -31,11 +34,11 @@
         <h2>Notícias</h2>
         <?php foreach ($noticias as $noticia) { ?>
             <div class="noticia">
-                <p><?= substr($noticia->conteudo, 0, 100) . '...' ?></p> 
+                <p><?= substr($noticia->conteudo, 0, 100) . '...' ?></p>
             </div>
         <?php } ?>
 
-    <p><a href="todasnoticias.php">Ver notícias</a></p>
+        <p><a href="todasnoticias.php">Ver notícias</a></p>
     </main>
 
     <?php include './padrao/rodape.inc.php'; ?>

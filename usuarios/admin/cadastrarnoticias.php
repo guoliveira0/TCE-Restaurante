@@ -13,7 +13,9 @@ Util::isAdmin()
     <script src="https://cdn.tiny.cloud/1/rsrllxn7v5tmfve49z7wzocog92nwadca6n4s6ytb80bvitc/tinymce/6/tinymce.min.js" referrerpolicy="origin"></script>
     <title>Cadastro Notícias</title>
     <link rel="stylesheet" href="../../styles.css">
-
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+    </style>
 </head>
 
 <body>

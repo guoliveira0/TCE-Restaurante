@@ -35,6 +35,9 @@ else{
     <script src="https://kit.fontawesome.com/549d3529d7.js" crossorigin="anonymous"></script>
     <title>Editar Usuários</title>
     <link rel="stylesheet" href="../../styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+    </style>
 
 </head>
 
