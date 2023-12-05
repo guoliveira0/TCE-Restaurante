@@ -115,7 +115,7 @@ class UsuarioServices
             'root',
             ''
         );
-        date_default_timezone_get("America/Fortaleza");
+        date_default_timezone_set('America/Fortaleza');
 
         $noticia = R::dispense('noticia');
         $noticia->conteudo = $conteudo;

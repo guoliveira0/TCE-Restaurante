@@ -1,8 +1,17 @@
+html, body {
+    background-color: #f6dcac;
+}
+
+a{
+    color: #700202;
+}
+
 /* Reset de estilos para remover margens e paddings padrão */
 body,
 ul {
     margin: 0;
     padding: 0;
+    text-align: center;
 }
 
 /* Estilos para o cabeçalho */
@@ -20,8 +29,12 @@ ul {
 }
 
 header {
-    background-color: #FFD700;
+    background-color: #faa968;
     padding: 20px;
+    color: #700202;
+    font-family: 'Roboto', sans-serif;
+    font-size: 13px;
+    font-weight: 600;
 }
 
 nav {
@@ -33,17 +46,39 @@ nav ul {
 }
 
 nav ul li {
-    display: inline;
-    margin: 20px;
+    display: inline-block;
 }
 
 nav ul li a {
     text-decoration: none;
-    color: #000;
+    display: inline-block;
+    padding: 10px 15px;
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
+    color: #700202;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
 }
 
 nav ul li a:hover {
     color: #FF4500;
+}
+
+/* .dropdown-menu{
+    position:absolute;
+} */
+
+/* Footer */
+footer {
+    text-align: center;
+}
+
+footer a {
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    color: black;
+    font-size: 12px;
+    text-decoration: none;
+    text-transform: uppercase;
 }
