@@ -25,11 +25,11 @@ Util::isGerente();
         <fieldset>
             <legend>Cadastrar Produtos</legend>
             <label for="nome">Nome:</label>
-            <input type="text" name="nome" id="nome" require><br>
+            <input type="text" name="nome" id="nome" required><br>
             <label for="preco">Preço:</label>
-            <input type="number" name="preco" id="preco" min="0.01" step=0.01 require><br>
+            <input type="number" name="preco" id="preco" step="0.01" required><br>
             <label for="codigo">Código:</label>
-            <input type="number" name="codigo" id="codigo" min="1000" max="9999" require><br>
+            <input type="number" name="codigo" id="codigo" min="1000" max="9999" required><br>
             <a href="index.php">Voltar</a>
             <input type="submit" value="Cadastrar">
         </fieldset>
@@ -37,7 +37,7 @@ Util::isGerente();
       <?php
       if(isset($_POST['codigo'])){
       require_once '../../classes/usuarioservices.class.php';
-      UsuarioServices::salvarProduto($_POST['nome'], $_POST['preco'], $_POST['codigo']);
+      UsuarioServices::salvarProduto($_POST['nome'], floatval($_POST['preco']), $_POST['codigo']);
       header('Location:cadastrarproduto.php');
     }
       ?>

@@ -11,20 +11,20 @@
         <div id="linksheader">
             <nav>
                 <ul>
-                    <li><a href="/tcd2_luiz_lorena_mariana/relatorioprodutos.php">Produtos</a></li>
+                    <li><a href="../../usuarios/admin/relatorioprodutos.php">Produtos</a></li>
                     <li><a href="./todasnoticias.php">Ver todas notícias</a></li>
                     <li>|</li>  
                     <li class="dropdown">
                         <a href="">Admin</a>
 
                         <div class="dropdown-lista">
-                            <a href="cadastrarnoticias.php">Cadastro de notícias</a>
-                            <a href="cadastrarusuarios.php">Cadastro de Usuários</a>
-                            <a href="escolherusuario.php">Edição de Usuários</a>
-                            <a href="relatoriousuarios.php">Relatório Usuários</a>
-                            <a href="cadastrocliente.php">Cadastro de Clientes</a>
-                            <a href="escolhercliente.php">Editar Clientes</a>
-                            <a href="relatorioclientes.php">Relatório Clientes</a>
+                            <a href="../../usuarios/admin/cadastrarnoticias.php">Cadastro de notícias</a>
+                            <a href="../../usuarios/admin/cadastrarusuarios.php">Cadastro de Usuários</a>
+                            <a href="../../usuarios/admin/escolherusuario.php">Edição de Usuários</a>
+                            <a href="../../usuarios/admin/relatoriousuarios.php">Relatório Usuários</a>
+                            <a href="../../usuarios/admin/cadastrocliente.php">Cadastro de Clientes</a>
+                            <a href="../../usuarios/admin/escolhercliente.php">Editar Clientes</a>
+                            <a href="../../usuarios/admin/relatorioclientes.php">Relatório Clientes</a>
                         </div>
                     </li>
                     
@@ -48,18 +48,18 @@
         <div id="linksheader">
             <nav>
                 <ul>
-                    <li><a href="/tcd2_luiz_lorena_mariana/relatorioprodutos.php">Produtos</a></li>
+                    <li><a href="../../usuarios/gerente/relatorioprodutos.php">Produtos</a></li>
                     <li><a href="./todasnoticias.php">Ver todas notícias</a></li>
                     <li>|</li>  
                     <li class="dropdown">
                         <a href="">Gerente</a>
                         <div class="dropdown-lista">
-                            <a href="cadastrocliente.php">Cadastro de Clientes</a>
-                            <a href="relatorioclientes.php">Relatório de Clientes</a>
-                            <a href="cadastrarnoticias.php">Cadastro de Notícia</a>
-                            <a href="cadastrarproduto.php">Cadastro de Produtos</a>
-                            <a href="escolhercliente.php">Editar Clientes</a>
-                            <a href="escolherpin.php">Relatório Carteira</a>
+                            <a href="../../usuarios/gerente/cadastrocliente.php">Cadastro de Clientes</a>
+                            <a href="../../usuarios/gerente/relatorioclientes.php">Relatório de Clientes</a>
+                            <a href="../../usuarios/gerente/cadastrarnoticias.php">Cadastro de Notícia</a>
+                            <a href="../../usuarios/gerente/cadastrarproduto.php">Cadastro de Produtos</a>
+                            <a href="../../usuarios/gerente/escolhercliente.php">Editar Clientes</a>
+                            <a href="../../usuarios/gerente/escolherpin.php">Relatório Carteira</a>
                         </div>
                     </li>
                     
@@ -84,15 +84,15 @@
         <div id="linksheader">
             <nav>
                 <ul>
-                    <li><a href="/tcd2_luiz_lorena_mariana/relatorioprodutos.php">Produtos</a></li>
+                    <li><a href="../../usuarios/caixa/relatorioprodutos.php">Produtos</a></li>
                     <li><a href="./todasnoticias.php">Ver todas notícias</a></li>
                     <li>|</li>  
                     <li class="dropdown">
                         <a href="">Caixa</a>
                         <div class="dropdown-lista">
-                        <a href="cadastrovenda.php">Cadastrar Venda</a>
-                        <a href="escolherpin.php">Relatório de Carteira</a>
-                        <a href="escolherhistorico.php">Histórico de Consumo</a>
+                        <a href="../../usuarios/caixa/cadastrovenda.php">Cadastrar Venda</a>
+                        <a href="../../usuarios/caixa/escolherpin.php">Relatório de Carteira</a>
+                        <a href="../../usuarios/caixa/escolherhistorico.php">Histórico de Consumo</a>
                         </div>
                     </li>
                     
@@ -117,15 +117,13 @@
         <div id="linksheader">
             <nav>
                 <ul>
-                    <li><a href="/tcd2_luiz_lorena_mariana/relatorioprodutos.php">Produtos</a></li>
+                    <li><a href="../../usuarios/cliente/relatorioprodutos.php">Produtos</a></li>
                     <li><a href="./todasnoticias.php">Ver todas notícias</a></li>
                     <li>|</li>  
                     <li class="dropdown">
                         <a href="">Cliente</a>
                         <div class="dropdown-lista">
-                        <a href="cadastrovenda.php">Cadastrar Venda</a>
-                        <a href="escolherpin.php">Relatório de Carteira</a>
-                        <a href="escolherhistorico.php">Histórico de Consumo</a>
+                        <a href="../../usuarios/cliente/escolherhistorico.php">Histórico de Consumo</a>
                         </div>
                     </li>
                     

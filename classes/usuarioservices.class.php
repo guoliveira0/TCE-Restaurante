@@ -210,7 +210,7 @@ class UsuarioServices
 
 
         $usuario = R::findOne('usuario', 'pin LIKE ?', [$pin]);
-        
+
 
         if ($usuario->perfil == 'cliente') {
             return $usuario;
@@ -230,9 +230,9 @@ class UsuarioServices
         }
 
         $usuario = R::findOne('usuario', 'pin LIKE ?', [$pin]);
-        
 
-        if ($usuario->carteira == TRUE ) {
+
+        if ($usuario->carteira == TRUE) {
             return $usuario;
         }
         R::close();
@@ -279,7 +279,7 @@ class UsuarioServices
             return $y;
         }
 
-       
+
 
         R::close();
     }
@@ -357,16 +357,28 @@ class UsuarioServices
             'root',
             ''
         );
+        $produto = R::findOne('produto', 'codigo LIKE ?', [$codigo]);
 
-        $produto = R::dispense('produto');
+        if ($produto->codigo == $codigo) {
+            echo ("<script>alert(\"Código já cadastrado!!\");</script>");
+            echo ("<meta http-equiv=\"refresh\" content=\"0;url=../../usuarios/gerente/cadastrarproduto.php\"> ");
+            exit;
+        } else {
+            $produto = R::dispense('produto');
+            $produto->nome = $nome;
+            $produto->preco = $preco;
+            $produto->codigo = $codigo;
 
-        $produto->nome = $nome;
-        $produto->preco = $preco;
-        $produto->codigo = $codigo;
-
-        R::store($produto);
-        R::close();
+            R::store($produto);
+            R::close();
+        }
     }
+
+
+
+
+
+
     public static function calcularSubtotal($codigo, $quantidade)
     {
         require_once 'r.class.php';
