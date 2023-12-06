@@ -7,19 +7,18 @@ if (isset($_POST['id'])) {
 
     $usuario = UsuarioServices::procurarPorId($_POST['id']);
 
- if($usuario->perfil !== 'cliente'){
-    $id = $usuario->id;
-    $nome = $usuario->nome;
-    $email = $usuario->email;
-    $perfil = $usuario->perfil;}
-else{
-    
-    echo ("<script>alert(\"Usuário não pode ser cliente!\");</script>");
-   
-    echo("<meta http-equiv=\"refresh\" content=\"0;url=escolherusuario.php\"> ");
-    exit;
-}
+    if ($usuario->perfil !== 'cliente') {
+        $id = $usuario->id;
+        $nome = $usuario->nome;
+        $email = $usuario->email;
+        $perfil = $usuario->perfil;
+    } else {
 
+        echo ("<script>alert(\"Usuário não pode ser cliente!\");</script>");
+
+        echo ("<meta http-equiv=\"refresh\" content=\"0;url=escolherusuario.php\"> ");
+        exit;
+    }
 } else {
     header('Location:cadastrarusuarios.php');
 }
@@ -27,6 +26,7 @@ else{
 
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -42,59 +42,56 @@ else{
 </head>
 
 <body>
-   
     <?php
     include '../../padrao/cabecalho.inc.php'; ?>
-    <h1>Editar Usuário</h1>
-
     <main>
-        <h1>Edição de Usuários</h1>
+        <div class="destaque-titulo">
+            <h1>Editar usuário</h1>
+        </div>
 
-        <form action="processaredicao.php" method="post">
-            <fieldset>
-                <legend>Edição de Usuário</legend>
+        <form action="processaredicao.php" method="post" class="user-form" id="form-editar-usuario">
+            <input type="hidden" name="id" value="<?= $id ?>">
 
-                <input type="hidden" name="id" value="<?= $id?>">
+            <div class="form-group">
+                <label for="nome">Nome:</label>
+                <input type="text" name="nome" id="nome" value="<?= $nome ?>">
+            </div>
 
-                <label for="nome">Nome: </label>
-                <input type="text" name="nome" id="nome" value="<?= $nome ?>"><br>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" name="email" id="email" value="<?= $email ?>">
+            </div>
 
-                <label for="email">Email: </label>
-                <input type="text" name="email" id="email" value="<?= $email ?>"><br>
-
+            <div class="form-group">
                 <label for="senha">Senha:</label>
-                <input type="password" name="senha" id="senha"><br>
+                <input type="password" name="senha" id="senha">
+            </div>
 
+            <div class="form-group">
+                <label for="perfis">Tipo de perfil:</label>
                 <select name="perfis" id="perfis">
                     <?php
-                    if($perfil == 'caixa'){
+                    if ($perfil == 'caixa') {
                         echo "<option value=\"caixa\" selected>Caixa</option>";
                         echo "<option value=\"admin\">Administrador</option>";
                         echo "<option value=\"gerente\">Gerente</option>";
-                    }
-                    else if($perfil=='gerente'){
+                    } else if ($perfil == 'gerente') {
                         echo "<option value=\"gerente\" selected>Gerente</option>";
                         echo "<option value=\"admin\">Administrador</option>";
                         echo "<option value=\"caixa\">Caixa</option>";
-                    }
-                    else if($perfil == 'admin'){
+                    } else if ($perfil == 'admin') {
                         echo "<option value=\"admin\" selected>Administrador</option>";
                         echo "<option value=\"caixa\">Caixa</option>";
-                        echo "<option value=\"admin\">Administrador</option>";
+                        echo "<option value=\"gerente\">Gerente</option>";
                     }
-                    
                     ?>
-            
-    
-                </select><br>
+                </select>
+            </div>
 
-                <a href="index.php">Voltar</a>
+            <div class="form-group">
                 <input type="submit" value="Salvar">
-
-            </fieldset>
+            </div>
         </form>
-
-
     </main>
 
     <?php include '../../padrao/rodape.inc.php'; ?>

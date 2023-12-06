@@ -18,13 +18,13 @@
                         <a href="">Admin</a>
 
                         <div class="dropdown-lista">
-                            <a href="../../usuarios/admin/cadastrarnoticias.php">Cadastro de notícias</a>
+                            <a href="../../usuarios/admin/cadastrarnoticias.php">Cadastro de Notícias</a>
                             <a href="../../usuarios/admin/cadastrarusuarios.php">Cadastro de Usuários</a>
                             <a href="../../usuarios/admin/escolherusuario.php">Edição de Usuários</a>
-                            <a href="../../usuarios/admin/relatoriousuarios.php">Relatório Usuários</a>
+                            <a href="../../usuarios/admin/relatoriousuarios.php">Lista de Usuários</a>
                             <a href="../../usuarios/admin/cadastrocliente.php">Cadastro de Clientes</a>
                             <a href="../../usuarios/admin/escolhercliente.php">Editar Clientes</a>
-                            <a href="../../usuarios/admin/relatorioclientes.php">Relatório Clientes</a>
+                            <a href="../../usuarios/admin/relatorioclientes.php">Lista Clientes</a>
                         </div>
                     </li>
                     
@@ -55,11 +55,11 @@
                         <a href="">Gerente</a>
                         <div class="dropdown-lista">
                             <a href="../../usuarios/gerente/cadastrocliente.php">Cadastro de Clientes</a>
-                            <a href="../../usuarios/gerente/relatorioclientes.php">Relatório de Clientes</a>
+                            <a href="../../usuarios/gerente/relatorioclientes.php">Lista de Clientes</a>
                             <a href="../../usuarios/gerente/cadastrarnoticias.php">Cadastro de Notícia</a>
                             <a href="../../usuarios/gerente/cadastrarproduto.php">Cadastro de Produtos</a>
-                            <a href="../../usuarios/gerente/escolhercliente.php">Editar Clientes</a>
-                            <a href="../../usuarios/gerente/escolherpin.php">Relatório Carteira</a>
+                            <a href="../../usuarios/gerente/escolhercliente.php">Editar Cliente</a>
+                            <a href="../../usuarios/gerente/escolherpin.php">Relatório da Carteira</a>
                         </div>
                     </li>
                     
@@ -91,7 +91,7 @@
                         <a href="">Caixa</a>
                         <div class="dropdown-lista">
                         <a href="../../usuarios/caixa/cadastrovenda.php">Cadastrar Venda</a>
-                        <a href="../../usuarios/caixa/escolherpin.php">Relatório de Carteira</a>
+                        <a href="../../usuarios/caixa/escolherpin.php">Relatório da Carteira</a>
                         <a href="../../usuarios/caixa/escolherhistorico.php">Histórico de Consumo</a>
                         </div>
                     </li>

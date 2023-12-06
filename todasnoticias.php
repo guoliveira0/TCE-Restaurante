@@ -15,7 +15,10 @@
     <?php include './padrao/cabecalho.inc.php'; ?>
 
     <main>
-        <h1>Todas notícias</h1>
+        <div class="destaque-titulo">
+            <h1>Todas as notícias</h1>
+        </div>
+
         <?php
         require_once 'classes/r.class.php';
         R::setup(

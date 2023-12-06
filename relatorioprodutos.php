@@ -15,7 +15,9 @@
 <body>
     <?php include 'padrao/cabecalho.inc.php' ?>
     <main>
-        <h1>Relatório Produtos</h1>
+        <div class="destaque-titulo">
+            <h1>Lista de Produtos</h1>
+        </div>
 
         <table>
             <tr>

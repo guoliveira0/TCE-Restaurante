@@ -1,23 +1,25 @@
-html, body {
+html,
+body {
     background-color: #f6dcac;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 600; 
+    font-weight: 600;
 }
 
-a{
+a {
     color: #700202;
 }
-a:hover{
-    color:#FF4500;
+
+a:hover {
+    color: #FF4500;
 
 }
 
-body{
+body {
     margin: 0;
 }
 
-main{
-    margin-left: 13px;
+main {
+    /* margin-left: 13px; */
 }
 
 /* Estilos para o cabeçalho */
@@ -33,7 +35,7 @@ header {
 
 nav {
     text-align: center;
-    background-color:  #faa968;
+    background-color: #faa968;
 }
 
 nav li {
@@ -41,7 +43,7 @@ nav li {
 }
 
 
-nav li  {
+nav li {
     display: inline-block;
 }
 
@@ -69,12 +71,13 @@ nav ul li a:hover {
 
 .dropdown-lista {
     position: absolute;
-    box-shadow: 0px 0px 15px rgba(255, 167, 108, 0.4); 
+    box-shadow: 0px 0px 15px rgba(255, 167, 108, 0.4);
     display: none;
     background-color: #f6dcac;
     border-radius: 8px;
     text-transform: none;
-    z-index: 999; /* Ajuste o valor conforme necessário */
+    z-index: 999;
+    /* Ajuste o valor conforme necessário */
 }
 
 
@@ -91,7 +94,7 @@ nav ul li a:hover {
     border-radius: 2px;
 }
 
-nav ul li div a{
+nav ul li div a {
     padding: 8px;
     width: 180px;
 }
@@ -109,9 +112,12 @@ nav ul li div a:hover {
 /* Dropdown Menu */
 .dropdown-menu {
     position: absolute;
-    background-color: #f6dcac; /* Cor de fundo */
-    box-shadow: 0px 0px 15px rgba(255, 167, 108, 0.4); /* Sombra */
-    border-radius: 5px; /* Borda arredondada */
+    background-color: #f6dcac;
+    /* Cor de fundo */
+    box-shadow: 0px 0px 15px rgba(255, 167, 108, 0.4);
+    /* Sombra */
+    border-radius: 5px;
+    /* Borda arredondada */
     width: 180px;
     height: auto;
     padding-top: 10px;
@@ -152,7 +158,7 @@ form input {
     margin: 0 auto;
 }
 
-.entrar:hover{
+.entrar:hover {
     transition: background-color 0.3s;
     background-color: #faa35d;
 }
@@ -160,7 +166,7 @@ form input {
 /* Footer */
 footer {
     text-align: center;
-    color:#700202;  
+    color: #700202;
 }
 
 footer a {
@@ -169,16 +175,6 @@ footer a {
     font-size: 12px;
     text-decoration: none;
     text-transform: uppercase;
-}
-
-/* Noticias */
-.noticia {
-    background-color: #FFF2C4;
-    margin-left: 1em;
-    margin-right: 2em;
-    margin-top: 2em;
-    padding: 0.5px 18px;
-    border-radius: 6px;
 }
 
 /* Tabelas */
@@ -195,7 +191,7 @@ thead {
 }
 
 thead th {
-   padding: 10px;
+    padding: 10px;
     text-align: left;
 }
 
@@ -223,4 +219,525 @@ tbody a:hover {
     color: #FF4500;
 }
 
+/* título */
+.destaque-titulo {
+    display: flex;
+    align-items: center;
+    height: 16px;
+    background-color: #faa968;
+    /* Cor do destaque */
+    margin: 30px 0px;
+    /* Espaçamento do topo */
 
+}
+
+.destaque-titulo h1 {
+    background-color: #f6dcac;
+    margin-left: 20px;
+    text-shadow: #FF4500 0em 0em 0.1em;
+    font-size: 34px;
+}
+
+/* Noticias */
+.noticia {
+    background-color: #FFF2C4;
+    margin-left: 1em;
+    margin-right: 2em;
+    margin-top: 2em;
+    padding: 0.5px 18px;
+    border-radius: 6px;
+}
+
+/* Estilo para o botão de cadastro de noticia*/
+#cadastrarnoticia input[type="submit"] {
+    background-color: #ff5c21;
+    color: #f7f7f5;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    display: block;
+    margin: 20px auto;
+    transition: background-color 0.3s;
+}
+
+/*botão de cadastro */
+#cadastrarnoticia input[type="submit"]:hover {
+    background-color: #faa35d;
+}
+
+/*formulário de cadastro de usuários */
+#cadastrarusuario {
+    margin-top: 30px;
+    text-align: center;
+    width: 300px;
+    margin: 0 auto;
+    background-color: #f8e1b5;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(255, 167, 108, 0.4);
+}
+
+#cadastrarusuario h2 {
+    font-weight: bold;
+    font-size: 22px;
+    color: #700202;
+    margin-bottom: 20px;
+}
+
+#cadastrarusuario .form-group {
+    margin-bottom: 15px;
+}
+
+#cadastrarusuario label {
+    display: block;
+    margin-bottom: 5px;
+    color: #700202;
+}
+
+#cadastrarusuario input[type="text"],
+#cadastrarusuario input[type="email"],
+#cadastrarusuario input[type="password"],
+#cadastrarusuario select {
+    width: calc(100% - 12px);
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #faa968;
+    margin-bottom: 10px;
+}
+
+#cadastrarusuario input[type="submit"] {
+    background-color: #ff5c21;
+    color: #f7f7f5;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#cadastrarusuario input[type="submit"]:hover {
+    background-color: #faa968;
+    ;
+}
+
+/* formulário de edição por id */
+#editarusuario {
+    margin-top: 30px;
+    text-align: center;
+    width: 200px;
+    margin: 0 auto;
+    background-color: #f6dcac;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(255, 167, 108, 0.4);
+}
+
+#editarusuario .form-group {
+    margin-bottom: 15px;
+}
+
+#editarusuario label {
+    display: block;
+    margin: 5px 0px;
+    color: #700202;
+}
+
+#editarusuario input[type="number"] {
+    width: calc(100% - 12px);
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #faa968;
+    margin: 10px 0px 4px;
+}
+
+#editarusuario input[type="submit"] {
+    background-color: #ff5c21;
+    color: #f7f7f5;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0;
+    transition: background-color 0.3s;
+}
+
+#editarusuario input[type="submit"]:hover {
+    background-color: #FF4500;
+}
+
+/* formulário de edição de usuários */
+#form-editar-usuario {
+    margin-top: 30px;
+    text-align: center;
+    width: 300px;
+    margin: 0 auto;
+    background-color: #f6dcac;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(255, 167, 108, 0.4);
+}
+
+#form-editar-usuario .form-group {
+    margin-bottom: 15px;
+}
+
+#form-editar-usuario label {
+    display: block;
+    margin-bottom: 5px;
+    color: #700202;
+}
+
+#form-editar-usuario input[type="text"],
+#form-editar-usuario input[type="password"],
+#form-editar-usuario select {
+    width: calc(100% - 12px);
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ff5c21;
+    margin-bottom: 10px;
+}
+
+#form-editar-usuario input[type="submit"] {
+    background-color: #ff5c21;
+    color: #f7f7f5;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#form-editar-usuario input[type="submit"]:hover {
+    background-color: #FF4500;
+}
+
+/* formulário de cadastro de cliente */
+#form-cadastro-cliente {
+    margin-top: 30px;
+    text-align: center;
+    width: 300px;
+    margin: 0 auto;
+    background-color: #f6dcac;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(255, 167, 108, 0.4);
+}
+
+#form-cadastro-cliente .form-group {
+    margin-bottom: 15px;
+}
+
+#form-cadastro-cliente label {
+    display: block;
+    margin-bottom: 5px;
+    color: #700202;
+}
+
+#form-cadastro-cliente input[type="text"],
+#form-cadastro-cliente input[type="email"],
+#form-cadastro-cliente input[type="password"],
+#form-cadastro-cliente input[type="number"],
+#form-cadastro-cliente input[type="checkbox"] {
+    width: calc(100% - 12px);
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ff5c21;
+    margin-bottom: 10px;
+}
+
+#form-cadastro-cliente input[type="submit"] {
+    background-color: #ff5c21;
+    color: #f7f7f5;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#form-cadastro-cliente input[type="submit"]:hover {
+    background-color: #FF4500;
+}
+
+/*  formulário de edição por email */
+#formeditarporemail {
+    margin-top: 30px;
+    text-align: center;
+    width: 230px;
+    margin: 0 auto;
+    background-color: #f6dcac;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(255, 167, 108, 0.4);
+}
+
+#formeditarporemail .form-group {
+    margin-bottom: 15px;
+}
+
+#formeditarporemail label {
+    display: block;
+    margin: 5px 0px;
+    color: #700202;
+}
+
+#formeditarporemail input[type="text"] {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #faa968;
+    margin: 10px 0px 4px;
+}
+
+#formeditarporemail input[type="submit"] {
+    background-color: #ff5c21;
+    color: #f7f7f5;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0;
+    transition: background-color 0.3s;
+}
+
+#formeditarporemail input[type="submit"]:hover {
+    background-color: #FF4500;
+}
+
+
+/* formulário de edição de cliente */
+#form-editar-cliente {
+    margin-top: 30px;
+    text-align: center;
+    width: 300px;
+    margin: 0 auto;
+    background-color: #f6dcac;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(255, 167, 108, 0.4);
+}
+
+#form-editar-cliente .form-group {
+    margin-bottom: 15px;
+}
+
+#form-editar-cliente label {
+    display: block;
+    margin-bottom: 5px;
+    color: #700202;
+}
+
+#form-editar-cliente input[type="text"],
+#form-editar-cliente input[type="password"],
+#form-editar-cliente input[type="number"],
+#form-editar-cliente input[type="checkbox"] {
+    width: calc(100% - 12px);
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ff5c21;
+    margin-bottom: 10px;
+}
+
+#form-editar-cliente input[type="submit"] {
+    background-color: #ff5c21;
+    color: #f7f7f5;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#form-editar-cliente input[type="submit"]:hover {
+    background-color: #FF4500;
+}
+
+/* formulário de cadastro de venda */
+#form-cadastro-venda {
+    margin-top: 30px;
+    text-align: center;
+    width: 300px;
+    margin: 0 auto;
+    background-color: #f6dcac;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(255, 167, 108, 0.4);
+}
+
+#form-cadastro-venda .form-group {
+    margin-bottom: 15px;
+}
+
+#form-cadastro-venda label {
+    display: block;
+    margin-bottom: 5px;
+    color: #700202;
+}
+
+#form-cadastro-venda input[type="number"],
+#form-cadastro-venda input[type="password"],
+#form-cadastro-venda select,
+#form-cadastro-venda input[type="checkbox"] {
+    width: calc(100% - 12px);
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ff5c21;
+    margin-bottom: 10px;
+}
+
+#form-cadastro-venda input[type="submit"] {
+    background-color: #ff5c21;
+    color: #f7f7f5;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#form-cadastro-venda input[type="submit"]:hover {
+    background-color: #FF4500;
+}
+
+#form-cadastro-venda a {
+    text-decoration: none;
+    color: #700202;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+#form-cadastro-venda a:hover {
+    color: #FF4500;
+}
+
+.form-group-checkbox {
+    display: flex;
+    align-items: center;
+    padding-bottom: 18px;
+}
+
+.form-group-checkbox label {
+    flex: 1;
+    margin-bottom: 0;
+    text-align: right;
+    padding-right: 10px;
+}
+
+.form-group-checkbox input[type="checkbox"] {
+    flex: 1;
+    margin-bottom: 0;
+    width: auto;
+}
+
+/* formulario de consumo */
+#form-historico-consumo {
+    margin-top: 30px;
+    text-align: center;
+    width: 230px;
+    margin: 0 auto;
+    background-color: #f6dcac;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(255, 167, 108, 0.4);
+}
+
+#form-historico-consumo .form-group {
+    margin-bottom: 15px;
+}
+
+#form-historico-consumo label {
+    display: block;
+    margin: 5px 0px;
+    color: #700202;
+}
+
+#form-historico-consumo input[type="password"] {
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #faa968;
+    margin: 10px 0px 4px;
+}
+
+#form-historico-consumo input[type="submit"] {
+    background-color: #ff5c21;
+    color: #f7f7f5;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 0;
+    transition: background-color 0.3s;
+}
+
+#form-historico-consumo input[type="submit"]:hover {
+    background-color: #FF4500;
+}
+
+/* Estilos para o formulário de cadastro de produto */
+#form-cadastro-produto {
+    margin-top: 30px;
+    text-align: center;
+    width: 250px;
+    margin: 0 auto;
+    background-color: #f6dcac;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0px 0px 15px rgba(255, 167, 108, 0.4);
+}
+
+#form-cadastro-produto .form-group {
+    margin-bottom: 15px;
+}
+
+#form-cadastro-produto label {
+    display: block;
+    margin-bottom: 5px;
+    color: #700202;
+}
+
+#form-cadastro-produto input[type="text"],
+#form-cadastro-produto input[type="number"] {
+    width: calc(100% - 12px);
+    padding: 8px;
+    border-radius: 5px;
+    border: 1px solid #ff5c21;
+    margin-bottom: 10px;
+}
+
+#form-cadastro-produto input[type="submit"] {
+    background-color: #ff5c21;
+    color: #f7f7f5;
+    padding: 8px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
+}
+
+#form-cadastro-produto input[type="submit"]:hover {
+    background-color: #FF4500;
+}
+
+#form-cadastro-produto a {
+    text-decoration: none;
+    color: #700202;
+    font-size: 14px;
+    margin-right: 10px;
+}
+
+#form-cadastro-produto a:hover {
+    color: #FF4500;
+}
