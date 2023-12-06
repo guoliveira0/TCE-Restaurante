@@ -11,16 +11,13 @@ Util::isCaixa();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Histórico de Consumo</title>
     <link rel="stylesheet" href="../../styles.css">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
-    </style>
 
 </head>
 <body>
     <?php include '../../padrao/cabecalho.inc.php'; ?>
     <h1>Histórico de Consumo</h1>
    
-    <form action="relatoriocarteira.php" method="post">
+    <form action="historicoconsumo.php" method="post">
     <fieldset>
         <legend>Histórico de Consumo</legend>
         <label for="pin">PIN: </label>

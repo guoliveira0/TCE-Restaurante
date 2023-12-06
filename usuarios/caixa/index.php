@@ -23,7 +23,8 @@ Util::isCaixa();
     <h1>Página Principal-Caixa</h1>
     <ul>
         <li><a href="cadastrovenda.php">Cadastrar Venda</a></li>
-        <li><a href="escolhercliente.php">Histórico de Consumo</a></li>
+        <li><a href="relatoriocarteira.php">Relatório de Carteira</a></li>
+        <li><a href="escolherhistorico.php">Histórico de Consumo</a></li>
     </ul>
 
     <?php

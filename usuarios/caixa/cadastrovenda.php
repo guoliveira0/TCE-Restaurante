@@ -53,10 +53,11 @@ Util::isCaixa();
       //require_once '../../classes/usuarioservices.class.php';
       $subtotal = UsuarioServices::calcularSubtotal($_POST['produtos'], $_POST['quantidade']);
       $pin = UsuarioServices::procurarPorPin($_POST['pin']);
-      if($pin == true){
+      $carteira = UsuarioServices::verificarCarteira($_POST['pin']);
+      if($pin == true && $carteira ==true){
       UsuarioServices::SalvarVenda($_POST['codigo'], $_POST['data'], $subtotal, $pin->pin, isset($_POST['aprazo']));
       }else{
-        echo ("<script>alert(\"Pin não encontrado\");</script>");
+        echo ("<script>alert(\"Pin não encontrado ou Carteira não está habilitada\");</script>");
         echo("<meta http-equiv=\"refresh\" content=\"0;url=cadastrovenda.php\"> ");
       }
     }
