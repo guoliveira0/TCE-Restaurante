@@ -33,7 +33,7 @@
                 <tr>
                     <td><?= $x->id ?></td>
                     <td><?= $x->nome ?></td>
-                    <td><?= $x->preco ?></td>
+                    <td>R$<?= $x->preco ?></td>
                     <td><?= $x->codigo ?></td>
 
                 </tr>
@@ -42,11 +42,8 @@
             }
             ?>
 
-
         </table>
         <a href="index.php">Voltar</a>
-
-
 
     </main>
 

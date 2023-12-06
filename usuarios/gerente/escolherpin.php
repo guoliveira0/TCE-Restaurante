@@ -5,6 +5,7 @@ Util::isGerente();
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,19 +17,25 @@ Util::isGerente();
     </style>
 
 </head>
+
 <body>
     <?php include '../../padrao/cabecalho.inc.php'; ?>
-    <h1>Histórico de Consumo</h1>
-   
-    <form action="relatoriocarteira.php" method="post">
-    <fieldset>
-        <legend>Histórico de Consumo</legend>
-        <label for="pin">PIN: </label>
-        <input type="password" name="pin" id="pin" min="1000" max="9999"><br>
-        <a href="index.php">Voltar</a>
-        <input type="submit" value="Enviar">
-    </fieldset>
-   
-    </form>
+    <main>
+        <h1>Histórico de Consumo</h1>
+
+        <form action="relatoriocarteira.php" method="post">
+            <fieldset>
+                <legend>Histórico de Consumo</legend>
+                <label for="pin">PIN: </label>
+                <input type="password" name="pin" id="pin" min="1000" max="9999"><br>
+                <a href="index.php">Voltar</a>
+                <input type="submit" value="Enviar">
+            </fieldset>
+
+        </form>
+    </main>
+    <?php include '../../padrao/rodape.inc.php'; ?>
+
 </body>
+
 </html>

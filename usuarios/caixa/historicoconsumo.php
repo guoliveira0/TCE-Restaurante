@@ -30,7 +30,6 @@ Util::isCaixa();
                 <th>Data de Pagamento</th>
          
 
-
             </tr>
             <?php
             require_once '../../classes/usuarioservices.class.php';

@@ -68,8 +68,6 @@ Util::isGerente();
         </table>
         <a href="index.php">Voltar</a>
 
-
-
     </main>
 
     <?php include '../../padrao/rodape.inc.php' ?>

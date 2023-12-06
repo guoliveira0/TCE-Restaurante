@@ -39,7 +39,6 @@
             </div>
         <?php } ?>
 
-    <p><a href="index.php">Página inicial</a></p>
     </main>
 
     <?php include '../../padrao/rodape.inc.php';?>

@@ -18,19 +18,23 @@ Util::isGerente();
 </head>
 
 <body>
-    <?php include '../../padrao/cabecalho.inc.php';?>
-    <h1>Editar Cliente</h1>
+    <?php include '../../padrao/cabecalho.inc.php'; ?>
+    <main>
+        <h1>Editar Cliente</h1>
 
-    <form action="editarcliente.php" method="post">
-        <fieldset>
-            <legend>Editar Cliente</legend>
-            <label for="email">Email:</label>
-            <input type="email" name="email" id="email">
-            <a href="index.php">Voltar</a>
-            <input type="submit" value="Enviar">
-        </fieldset>
+        <form action="editarcliente.php" method="post">
+            <fieldset>
+                <legend>Editar Cliente</legend>
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email">
+                <a href="index.php">Voltar</a>
+                <input type="submit" value="Enviar">
+            </fieldset>
 
-    </form>
+        </form>
+    </main>
+    <?php include '../../padrao/rodape.inc.php'; ?>
+
 </body>
 
 </html>

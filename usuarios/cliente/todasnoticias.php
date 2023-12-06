@@ -5,6 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Todas Noticias</title>
+    <link rel="stylesheet" href="../../styles.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
     </style>
@@ -36,8 +37,6 @@
             <p><?= $noticia->conteudo ?></p>
             </div>
         <?php } ?>
-
-    <p><a href="index.php">Página inicial</a></p>
     </main>
 
     <?php include '../../padrao/rodape.inc.php';?>

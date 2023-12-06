@@ -9,6 +9,7 @@ Util::isCliente();
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página Principal-Cliente</title>
+    <link rel="stylesheet" href="../../styles.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
     </style>
@@ -18,10 +19,6 @@ Util::isCliente();
 
     <main>
     <h1>Página Principal-Cliente</h1>
-    <ul>
-        <li><a href="historicodeconsumo.php">Histórico de Consumo</a></li>
-    </ul>
-    
     <?php
             require_once '../../classes/r.class.php';
                     

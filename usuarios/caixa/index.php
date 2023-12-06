@@ -17,16 +17,8 @@ Util::isCaixa();
 </head>
 <body>
     <?php include '../../padrao/cabecalho.inc.php';?>
-
-
+    
     <main>
-    <h1>Página Principal-Caixa</h1>
-    <ul>
-        <li><a href="cadastrovenda.php">Cadastrar Venda</a></li>
-        <li><a href="escolherpin.php">Relatório de Carteira</a></li>
-        <li><a href="escolherhistorico.php">Histórico de Consumo</a></li>
-    </ul>
-
     <?php
     require_once '../../classes/r.class.php';
             

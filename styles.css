@@ -74,7 +74,9 @@ nav ul li a:hover {
     background-color: #f6dcac;
     border-radius: 8px;
     text-transform: none;
+    z-index: 999; /* Ajuste o valor conforme necessário */
 }
+
 
 .dropdown:hover .dropdown-lista {
     display: block;
@@ -85,7 +87,7 @@ nav ul li a:hover {
     text-transform: none;
     display: block;
     width: 130px;
-    height: 15px;
+    height: auto;
     border-radius: 2px;
 }
 
@@ -110,8 +112,8 @@ nav ul li div a:hover {
     background-color: #f6dcac; /* Cor de fundo */
     box-shadow: 0px 0px 15px rgba(255, 167, 108, 0.4); /* Sombra */
     border-radius: 5px; /* Borda arredondada */
-    width: 220px;
-    height: 160px;
+    width: 180px;
+    height: auto;
     padding-top: 10px;
     padding-left: 20px;
     padding-right: 20px;
@@ -134,7 +136,7 @@ nav ul li div a:hover {
 form input {
     border-radius: 5px;
     border: none;
-    margin: 0px 3px;
+    margin: 3px 3px;
     padding: 4px;
 }
 
@@ -145,7 +147,7 @@ form input {
     border: none;
     border-radius: 5px;
     cursor: pointer;
-    font-size: 15px;
+    font-size: 14px;
     display: block;
     margin: 0 auto;
 }
@@ -172,9 +174,53 @@ footer a {
 /* Noticias */
 .noticia {
     background-color: #FFF2C4;
-    margin-left: 2em;
-    margin-right: 10%;
+    margin-left: 1em;
+    margin-right: 2em;
     margin-top: 2em;
     padding: 0.5px 18px;
     border-radius: 6px;
 }
+
+/* Tabelas */
+/* Estilos para a tabela */
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-top: 20px;
+}
+
+thead {
+    background-color: #faa968;
+    color: #700202;
+}
+
+thead th {
+    padding: 10px;
+    text-align: left;
+}
+
+
+tbody tr:hover {
+    background-color: #ffebcd;
+}
+
+tbody td {
+    padding: 8px;
+}
+
+/* Estilos específicos para a primeira coluna (ID) */
+tbody td:first-child {
+    font-weight: bold;
+}
+
+/* Estilizando os links dentro da tabela, se houver */
+tbody a {
+    color: #700202;
+    text-decoration: none;
+}
+
+tbody a:hover {
+    color: #FF4500;
+}
+
+
