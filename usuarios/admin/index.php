@@ -20,17 +20,7 @@ Util::isAdmin();
 
     <main>
     <h1>Página Principal-Administrador</h1>
-    <ul>
-        <li><a href="cadastrarnoticias.php">Cadastro de notícias</a></li>
-        <li><a href="cadastrarusuarios.php">Cadastro de Usuários</a></li>
-        <li><a href="escolherusuario.php">Edição de Usuários</a></li>
-        <li><a href="relatoriousuarios.php">Relatório Usuários</a></li>
-        <li><a href="cadastrocliente.php">Cadastro de Clientes</a></li>
-        <li><a href="escolhercliente.php">Editar Clientes</a></li>
-        <li><a href="relatorioclientes.php">Relatório Clientes</a></li>
-       
-        
-    </ul>
+  
     <?php
     require_once '../../classes/r.class.php';
             
@@ -45,13 +35,11 @@ Util::isAdmin();
     ?>
 
     <h2>Notícias</h2>
-    <?php foreach ($noticias as $noticia) { ?>
-    <div class="noticia">
-        <p><?= substr($noticia->conteudo, 0, 100) . '...' ?></p> 
-    </div>
-    <?php } ?>
-
-    <p><a href="todasnoticias.php">Ver notícias</a></p>
+    <?php foreach ($noticias as $noticia) { 
+        echo "<div class=\"noticia\">";
+        echo "$noticia->conteudo";
+        echo "</div>";  
+    } ?>
 
     </main>
 

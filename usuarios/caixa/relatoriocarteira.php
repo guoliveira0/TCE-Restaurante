@@ -1,4 +1,7 @@
-
+<?php
+require_once '../../classes/util.class.php';
+Util::isCaixa();
+?>
 <!DOCTYPE html>
 <html lang="pt-BR">
 
@@ -8,6 +11,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Relatório Produtos</title>
     <link rel="stylesheet" href="styles.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
+    </style>
 </head>
 
 <body>
@@ -31,7 +37,7 @@
             $carteiras = UsuarioServices::procurarCarteira($_POST['pin']);
             if($carteiras == NULL){
                 echo ("<script>alert(\"Nenhum pagamento pendente!!\");</script>");
-                echo ("<meta http-equiv=\"refresh\" content=\"0;url=../../usuarios/caixa/escolhercliente.php\"> ");
+                echo ("<meta http-equiv=\"refresh\" content=\"0;url=../../usuarios/caixa/escolherpin.php\"> ");
             }else{
             foreach ($carteiras as $x){
             ?>

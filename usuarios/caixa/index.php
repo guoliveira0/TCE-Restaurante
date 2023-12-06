@@ -23,7 +23,7 @@ Util::isCaixa();
     <h1>Página Principal-Caixa</h1>
     <ul>
         <li><a href="cadastrovenda.php">Cadastrar Venda</a></li>
-        <li><a href="relatoriocarteira.php">Relatório de Carteira</a></li>
+        <li><a href="escolherpin.php">Relatório de Carteira</a></li>
         <li><a href="escolherhistorico.php">Histórico de Consumo</a></li>
     </ul>
 
@@ -41,14 +41,11 @@ Util::isCaixa();
     ?>
 
     <h2>Notícias</h2>
-    <?php foreach ($noticias as $noticia) { ?>
-        <div class="noticia">
-            <p><?= substr($noticia->conteudo, 0, 100) . '...' ?></p> 
-        </div>
-    <?php } ?>
-    
-
-    <p><a href="todasnoticias.php">Ver notícias</a></p>
+    <?php foreach ($noticias as $noticia) { 
+        echo "<div class=\"noticia\">";
+        echo "$noticia->conteudo";
+        echo "</div>";  
+    } ?>
 
     </main>
 

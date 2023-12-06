@@ -26,10 +26,10 @@ Util::isCaixa();
       <fieldset>
         <legend>Cadastrar Usuários</legend>
         <label for="codigo">Codigo Venda:</label>
-        <input type="number" name="codigo" id="codigo" require><br>
+        <input type="number" name="codigo" id="codigo" require min="1000" max="9999"><br>
         <input type="date" name="data" id="data" value="<?php echo date('Y-m-d'); ?>" hidden>
         <label for="pin">Pin do Cliente:</label>
-        <input type="number" name="pin" id="pin"><br>
+        <input type="password" name="pin" id="pin" min="1000" max="9999"><br>
         <label for="produtos">Produtos:</label>
         <select name="produtos" id="produtos">
           <?php
@@ -42,9 +42,10 @@ Util::isCaixa();
           ?>
         </select><br>
         <label for="quantidade">Quantidade:</label>
-        <input type="number" name="quantidade" id="quantidade"><br>
+        <input type="number" name="quantidade" id="quantidade" min=1><br>
         <label for="aprazo">A prazo:</label>
         <input type="checkbox" name="aprazo" id="aprazo"><br>
+        <a href="index.php">Voltar</a>
         <input type="submit" value="Cadastrar">
       </fieldset>
     </form>
@@ -60,7 +61,9 @@ Util::isCaixa();
         echo ("<script>alert(\"Pin não encontrado ou Carteira não está habilitada\");</script>");
         echo("<meta http-equiv=\"refresh\" content=\"0;url=cadastrovenda.php\"> ");
       }
+      header('Location:cadastrovenda.php');
     }
+   
 
     
 

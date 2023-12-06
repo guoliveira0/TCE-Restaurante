@@ -32,13 +32,13 @@
         ?>
 
         <h2>Notícias</h2>
-        <?php foreach ($noticias as $noticia) { ?>
-            <div class="noticia">
-                <p><?= substr($noticia->conteudo, 0, 100) . '...' ?></p>
-            </div>
-        <?php } ?>
+        <?php foreach ($noticias as $noticia) { 
+            echo "<div class=\"noticia\">";
+            echo "$noticia->conteudo";
+            echo "</div>";  
+        } ?>
 
-        <p><a href="todasnoticias.php">Ver notícias</a></p>
+        <br>
     </main>
 
     <?php include './padrao/rodape.inc.php'; ?>

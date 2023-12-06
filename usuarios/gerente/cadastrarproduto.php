@@ -25,11 +25,11 @@ Util::isGerente();
         <fieldset>
             <legend>Cadastrar Produtos</legend>
             <label for="nome">Nome:</label>
-            <input type="text" name="nome" id="nome"><br>
+            <input type="text" name="nome" id="nome" require><br>
             <label for="preco">Preço:</label>
-            <input type="number" name="preco" id="preco" min="0.01" step=0.01><br>
+            <input type="number" name="preco" id="preco" min="0.01" step=0.01 require><br>
             <label for="codigo">Código:</label>
-            <input type="number" name="codigo" id="codigo" min="1000" max="9999" ><br>
+            <input type="number" name="codigo" id="codigo" min="1000" max="9999" require><br>
             <a href="index.php">Voltar</a>
             <input type="submit" value="Cadastrar">
         </fieldset>

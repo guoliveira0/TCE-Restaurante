@@ -24,7 +24,7 @@ Util::isCaixa();
     <fieldset>
         <legend>Histórico de Consumo</legend>
         <label for="pin">PIN: </label>
-        <input type="number" name="pin" id="pin"><br>
+        <input type="password" name="pin" id="pin" min="1000" max="9999"><br>
         <a href="index.php">Voltar</a>
         <input type="submit" value="Enviar">
     </fieldset>

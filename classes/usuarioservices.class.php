@@ -69,8 +69,9 @@ class UsuarioServices
             ''
         );
         $usuarios = R::findOne('usuario', 'email LIKE ?', [$email]);
-        if ($usuarios->email == $email) {
-            echo ("<script>alert(\"Email já cadastrado\");</script>");
+        $usuarios2 = R::findOne('usuario', 'pin LIKE ?', [$pin]);
+        if ($usuarios->email == $email || $usuarios2->pin == $pin) {
+            echo ("<script>alert(\"Email ou PIN já cadastrados\");</script>");
             echo ("<meta http-equiv=\"refresh\" content=\"0;url=../../usuarios/admin/cadastrocliente.php\"> ");
             exit;
         } else {
@@ -96,8 +97,8 @@ class UsuarioServices
         );
         $usuarios = R::findOne('usuario', 'email LIKE ?', [$email]);
 
-        if ($usuarios->email == $email) {
-            echo ("<script>alert(\"Email já cadastrado\");</script>");
+        if ($usuarios->email == $email && $usuarios->pin == $pin) {
+            echo ("<script>alert(\"Email ou PIN já cadastrados!\");</script>");
             echo ("<meta http-equiv=\"refresh\" content=\"0;url=../../usuarios/gerente/cadastrocliente.php\"> ");
             exit;
         } else {

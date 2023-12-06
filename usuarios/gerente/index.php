@@ -21,15 +21,6 @@ Util::isGerente()
 
     <main>
         <h1>Página Principal-Gerente</h1>
-        <ul>
-            <li><a href="cadastrocliente.php">Cadastro de Clientes</a></li>
-            <li><a href="relatorioclientes.php">Relatório de Clientes</a></li>
-            <li><a href="cadastrarnoticias.php">Cadastro de Notícia</a></li>
-            <li><a href="cadastrarproduto.php">Cadastro de Produtos</a></li>
-            <li><a href="escolhercliente.php">Editar Clientes</a></li>
-            
-        </ul>
-        
         <?php
             require_once '../../classes/r.class.php';
                     
@@ -44,13 +35,12 @@ Util::isGerente()
         ?>
         
         <h2>Notícias</h2>
-        <?php foreach ($noticias as $noticia) { ?>
-            <div class="noticia">
-                <p><?= substr($noticia->conteudo, 0, 100) . '...' ?></p> 
-            </div>
-        <?php } ?>
+        <?php foreach ($noticias as $noticia) { 
+            echo "<div class=\"noticia\">";
+            echo "$noticia->conteudo";
+            echo "</div>";  
+        } ?>
 
-        <p><a href="todasnoticias.php">Ver notícias</a></p>
     </main>
 
     <?php include '../../padrao/rodape.inc.php';?>
