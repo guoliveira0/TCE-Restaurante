@@ -43,6 +43,7 @@ class UsuarioServices
             echo ("<meta http-equiv=\"refresh\" content=\"0;url=../../usuarios/caixa/cadastrovenda.php\"> ");
             exit;
         } else {
+            date_default_timezone_set('America/Fortaleza');
             $venda = R::dispense('venda');
             $venda->codigo = $codigo;
             $venda->data = $data;
@@ -249,7 +250,7 @@ class UsuarioServices
             );
         }
 
-
+        date_default_timezone_set('America/Fortaleza');
         $venda = R::findOne('venda', 'codigo LIKE ?', [$codigo]);
         $venda->data_pagamento = date('Y-m-d');
         R::store($venda);
@@ -275,6 +276,34 @@ class UsuarioServices
             } else {
                 echo ("<script>alert(\"Pin não encontrado!\");</script>");
                 echo ("<meta http-equiv=\"refresh\" content=\"0;url=../../usuarios/caixa/escolhercliente.php\"> ");
+            }
+            return $y;
+        }
+
+
+
+        R::close();
+    }
+    public static function procurarCarteiraGerente($pin)
+    {
+
+        require_once 'r.class.php';
+        if (!R::testConnection()) {
+            R::setup(
+                'mysql:host=127.0.0.1;dbname=sistemarestaurante',
+                'root',
+                ''
+            );
+        }
+
+
+        $carteiras = R::findAll('venda', 'data_pagamento IS NULL');
+        foreach ($carteiras as $x) {
+            if ($x->pin == $pin) {
+                $y[] = $x;
+            } else {
+                echo ("<script>alert(\"Pin não encontrado!\");</script>");
+                echo ("<meta http-equiv=\"refresh\" content=\"0;url=../../usuarios/gerente/escolhercliente.php\"> ");
             }
             return $y;
         }

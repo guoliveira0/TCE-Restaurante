@@ -208,7 +208,7 @@ footer a {
 
 .content-table tbody tr :nth-last-of-type {
     border-bottom: 2px solid #FAA968
-
+}
 /* título */
 .destaque-titulo {
     display: flex;

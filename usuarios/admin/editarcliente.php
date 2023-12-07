@@ -72,7 +72,7 @@ if (isset($_POST['email'])) {
 
             <div class="form-group">
                 <label for="pin">Pin:</label>
-                <input type="number" name="pin" id="pin">
+                <input type="password" name="pin" id="pin">
             </div>
 
             <div class="form-group">

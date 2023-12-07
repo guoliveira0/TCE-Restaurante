@@ -1,6 +1,6 @@
 <?php
 require_once '../../classes/util.class.php';
-Util::isCaixa();
+Util::isCliente();
 ?>
 <!DOCTYPE html>
 <html lang="pt-BR">
@@ -9,7 +9,7 @@ Util::isCaixa();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relatório Produtos</title>
+    <title>Historico de consumo</title>
     <link rel="stylesheet" href="../../styles.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200&display=swap');
@@ -19,7 +19,9 @@ Util::isCaixa();
 <body>
     <?php include '../../padrao/cabecalho.inc.php' ?>
     <main>
-        <h1>Relatório Produtos</h1>
+        <div class="destaque-titulo">
+            <h1>Relatório de Consumo</h1>
+        </div>
 
         <table class= "content-table">
             <tr>
@@ -28,54 +30,47 @@ Util::isCaixa();
                 <th>Data</th>
                 <th>Valor</th>
                 <th>Data de Pagamento</th>
-                <th>Quitar Débtido</th>
 
 
             </tr>
             <?php
             require_once '../../classes/usuarioservices.class.php';
-            $carteiras = UsuarioServices::procurarCarteira($_POST['pin']);
-            if($carteiras == NULL){
+            $carteiras = UsuarioServices::procurarVenda($_POST['pin']);
+            if ($carteiras == NULL) {
                 echo ("<script>alert(\"Nenhum pagamento pendente!!\");</script>");
-                echo ("<meta http-equiv=\"refresh\" content=\"0;url=../../usuarios/caixa/escolherpin.php\"> ");
-            }else{
-            foreach ($carteiras as $x){
+                echo ("<meta http-equiv=\"refresh\" content=\"0;url=../../usuarios/caixa/escolhercliente.php\"> ");
+            } else {
+                foreach ($carteiras as $x) {
             ?>
-                <tr>
-                    <td><?= $x->id ?></td>
-                    <td><?= $x->codigo ?></td>
-                    <td><?= $x->data ?></td>
-                    <td><?= $x->subtotal ?></td>
-                 
+                    <tr>
+                        <td><?= $x->id ?></td>
+                        <td><?= $x->codigo ?></td>
+                        <td><?= $x->data ?></td>
+                        <td><?= $x->subtotal ?></td>
+
                     <?php
-                    if($x->dataPagamento == 0){
+                    if ($x->dataPagamento == 0) {
                         echo "<td>Não Pago</td>";
-                        echo   " <td><a href=\"quitardebito.php?codigo=$x->codigo\">Quitar Débito</a></td>";
+                    } else {
+
+                        echo "<td> $x->dataPagamento</td>";
                     }
-                    else{
-                        
-                    echo "<td> $x->dataPagamento</td>";
                 }
-            
-            }
 
-                
+
                     ?>
-                </tr>
+                    </tr>
 
-            <?php
+                <?php
             }
-            ?>
-
+                ?>
 
         </table>
-        <a href="index.php">Voltar</a>
-
-
 
     </main>
 
     <?php include '../../padrao/rodape.inc.php' ?>
+
 </body>
 
 </html>

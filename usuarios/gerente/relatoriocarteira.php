@@ -31,7 +31,7 @@ Util::isGerente();
             </tr>
             <?php
             require_once '../../classes/usuarioservices.class.php';
-            $carteiras = UsuarioServices::procurarCarteira($_POST['pin']);
+            $carteiras = UsuarioServices::procurarCarteiraGerente($_POST['pin']);
             if($carteiras == NULL){
                 echo ("<script>alert(\"Nenhum pagamento pendente!!\");</script>");
                 echo ("<meta http-equiv=\"refresh\" content=\"0;url=../../usuarios/caixa/escolherpin.php\"> ");
