@@ -20,7 +20,9 @@ Util::isAdmin();
 <body>
     <?php include '../../padrao/cabecalho.inc.php' ?>
     <main>
-        <h1>Relatório Clientes</h1>
+        <div class="destaque-titulo">
+            <h1>Lista de clientes</h1>
+        </div>
 
         <table  class= "content-table">
             <tr>
@@ -52,11 +54,7 @@ Util::isAdmin();
             }
             ?>
 
-
         </table>
-        <a href="index.php">Voltar</a>
-
-
 
     </main>
 

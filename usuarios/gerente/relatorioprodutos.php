@@ -15,7 +15,9 @@
 <body>
     <?php include '../../padrao/cabecalho.inc.php' ?>
     <main>
-        <h1>Relatório Produtos</h1>
+        <div class="destaque-titulo">
+            <h1>Lista de produtos</h1>
+        </div>
 
         <table class= "content-table">
             <tr>
@@ -33,7 +35,7 @@
                 <tr>
                     <td><?= $x->id ?></td>
                     <td><?= $x->nome ?></td>
-                    <td>R$<?= number_format((float)$x->preco, 2, '.', '')?></td>
+                    <td>R$<?= number_format((float)$x->preco, 2, '.', '') ?></td>
                     <td><?= $x->codigo ?></td>
 
                 </tr>
@@ -43,7 +45,6 @@
             ?>
 
         </table>
-        <a href="index.php">Voltar</a>
 
     </main>
 

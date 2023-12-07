@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -30,11 +31,17 @@
         // Talvez # -> 'ORDER BY id DESC LIMIT 3' funcione
         ?>
 
-        <h1>Notícias</h1>
-        <?php foreach ($noticias as $noticia) { 
+        <div class="destaque-titulo">
+            <h1>Notícias</h1>
+        </div>
+
+        <?php foreach ($noticias as $noticia) {
             echo "<div class=\"noticia\">";
-            echo "$noticia->conteudo";
-            echo "</div>";  
+            echo substr($noticia->conteudo, 0, 150); // Limitando o conteúdo da notícia a 100 caracteres
+            if (strlen($noticia->conteudo) > 150) {
+                echo "..."; // Adicionando reticências caso o texto seja maior que 100 caracteres
+            }
+            echo "</div>";
         } ?>
 
         <br>

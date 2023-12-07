@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,10 +14,13 @@
 </head>
 
 <body>
-    <?php include '../../padrao/cabecalho.inc.php';?>
+    <?php include '../../padrao/cabecalho.inc.php'; ?>
 
     <main>
-        <h1>Todas notícias</h1>
+        <div class="destaque-titulo">
+            <h1>Todas as notícias</h1>
+        </div>
+
         <?php
         require_once '../../classes/r.class.php';
 
@@ -32,16 +36,16 @@
         $noticias = R::findAll('noticia', ' ORDER BY id DESC')
         // Talvez # -> 'ORDER BY id DESC LIMIT 3' funcione
         ?>
-        <?php 
+        <?php
         foreach ($noticias as $noticia) { ?>
             <div class="noticia">
-            <p><?= $noticia->conteudo ?></p>
+                <p><?= $noticia->conteudo ?></p>
             </div>
         <?php } ?>
 
     </main>
 
-    <?php include '../../padrao/rodape.inc.php';?>
+    <?php include '../../padrao/rodape.inc.php'; ?>
 
 </body>
 

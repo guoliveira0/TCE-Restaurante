@@ -5,6 +5,7 @@ Util::isAdmin();
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -16,19 +17,29 @@ Util::isAdmin();
     </style>
 
 </head>
+
 <body>
     <?php include '../../padrao/cabecalho.inc.php'; ?>
-    <h1>Editar Usuário</h1>
-   
-    <form action="editarusuarios.php" method="post">
-    <fieldset>
-        <legend>Editar Usuário</legend>
-        <label for="id">ID: </label>
-        <input type="number" name="id" id="id"><br>
-        <a href="index.php">Voltar</a>
-        <input type="submit" value="Enviar">
-    </fieldset>
-   
-    </form>
+    <main>
+        <div class="destaque-titulo">
+            <h1>Editar usuário</h1>
+        </div>
+
+        <form action="editarusuarios.php" method="post" class="user-form" id="editarusuario">
+            <div class="form-group">
+                <label for="id">ID do usuário:</label>
+                <input type="number" name="id" id="id" min="0">
+            </div>
+
+            <div class="form-group">
+                <input type="submit" value="Enviar">
+            </div>
+        </form>
+
+    </main>
+
+    <?php include '../../padrao/rodape.inc.php'; ?>
+
 </body>
+
 </html>

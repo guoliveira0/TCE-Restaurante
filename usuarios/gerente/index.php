@@ -20,7 +20,6 @@ Util::isGerente()
     <?php include '../../padrao/cabecalho.inc.php';?>
 
     <main>
-        <h1>Página Principal-Gerente</h1>
         <?php
             require_once '../../classes/r.class.php';
                     
@@ -34,7 +33,10 @@ Util::isGerente()
             // Talvez # -> 'ORDER BY id DESC LIMIT 3' funcione
         ?>
         
-        <h2>Notícias</h2>
+        <div class="destaque-titulo">
+            <h1>Notícias</h1>
+        </div>
+        
         <?php foreach ($noticias as $noticia) { 
             echo "<div class=\"noticia\">";
             echo "$noticia->conteudo";

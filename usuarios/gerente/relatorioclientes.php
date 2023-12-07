@@ -5,6 +5,7 @@ Util::isGerente();
 
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,11 +21,13 @@ Util::isGerente();
 <body>
     <?php include '../../padrao/cabecalho.inc.php' ?>
     <main>
-        <h1>Relatório Clientes</h1>
+        <div class="destaque-titulo">
+            <h1>Lista de clientes</h1>
+        </div>
 
         <table class= "content-table">
             <tr>
-            <th>ID</th>
+                <th>ID</th>
                 <th>Nome</th>
                 <th>Email</th>
                 <th>Senha</th>
@@ -35,28 +38,24 @@ Util::isGerente();
             <?php
             require_once '../../classes/usuarioservices.class.php';
             $usuarios = UsuarioServices::procurarClientes();
-            foreach($usuarios as $x){
+            foreach ($usuarios as $x) {
             ?>
-                 <tr>
-                 <td><?=$x->id?></td>
-                 <td><?=$x->nome?></td>
-                 <td><?=$x->email?></td>
-                 <td><?=$x->senha?></td>
-                 <td><?=$x->carteira == 1 ? 'Habilitado' : 'Não habilitado'?></td>
-                 <td><?=$x->habilitado == 1 ? 'Habilitado' : 'Não habilitado'?></td>
-                 <td><a href="excluir.php?id=<?=$x->id?>">Excluir</a></td>
+                <tr>
+                    <td><?= $x->id ?></td>
+                    <td><?= $x->nome ?></td>
+                    <td><?= $x->email ?></td>
+                    <td><?= $x->senha ?></td>
+                    <td><?= $x->carteira == 1 ? 'Habilitado' : 'Não habilitado' ?></td>
+                    <td><?= $x->habilitado == 1 ? 'Habilitado' : 'Não habilitado' ?></td>
+                    <td><a href="excluir.php?id=<?= $x->id ?>">Excluir</a></td>
 
                 </tr>
-            
+
             <?php
             }
             ?>
 
-
         </table>
-        <a href="index.php">Voltar</a>
-
-
 
     </main>
 

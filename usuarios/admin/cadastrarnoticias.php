@@ -22,9 +22,11 @@ Util::isAdmin()
     <?php include '../../padrao/cabecalho.inc.php';?>
 
     <main>
-        <h1>Cadastro de Notícia</h1>
+        <div class="destaque-titulo">
+            <h1>Cadastrar nova notícia</h1>
+        </div>
 
-    <form action="cadastrarnoticias.php" method="post">
+    <form id="cadastrarnoticia" action="cadastrarnoticias.php" method="post">
         <script>
         tinymce.init({
             selector: 'textarea',
@@ -50,8 +52,6 @@ Util::isAdmin()
         UsuarioServices::salvarnoticia($_POST['conteudo']); 
       }
       ?>
-
-    <p><a href="index.php">Página inicial</a></p>
 
     </main>
     <?php include '../../padrao/rodape.inc.php';?>

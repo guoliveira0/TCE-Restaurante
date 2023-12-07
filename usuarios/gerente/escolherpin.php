@@ -21,16 +21,19 @@ Util::isGerente();
 <body>
     <?php include '../../padrao/cabecalho.inc.php'; ?>
     <main>
-        <h1>Histórico de Consumo</h1>
+        <div class="destaque-titulo">
+            <h1>Relatório da carteira</h1>
+        </div>
 
-        <form action="relatoriocarteira.php" method="post">
-            <fieldset>
-                <legend>Histórico de Consumo</legend>
-                <label for="pin">PIN: </label>
+        <form action="relatoriocarteira.php" method="post" id="form-historico-consumo">
+            <div class="form-group">
+                <label for="pin">PIN do cliente:</label>
                 <input type="password" name="pin" id="pin" min="1000" max="9999"><br>
-                <a href="index.php">Voltar</a>
+            </div>
+
+            <div class="form-group">
                 <input type="submit" value="Enviar">
-            </fieldset>
+            </div>
 
         </form>
     </main>
