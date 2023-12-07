@@ -30,7 +30,7 @@
                     
                      <?php
                      echo "<li>";
-                     echo "<a href=\"/tcd2_luiz_lorena_mariana/padrao/logout.php\">Logout</a>";
+                     echo "<a href=\"/tcd3_luiz_lorena_mariana/padrao/logout.php\">Logout</a>";
                      echo "</li>";
                     ?>
                 </ul>
@@ -65,7 +65,7 @@
                     
                      <?php
                      echo "<li>";
-                     echo "<a href=\"/tcd2_luiz_lorena_mariana/padrao/logout.php\">Logout</a>";
+                     echo "<a href=\"/tcd3_luiz_lorena_mariana/padrao/logout.php\">Logout</a>";
                      echo "</li>";
                     ?>
                 </ul>
@@ -98,7 +98,7 @@
                     
                      <?php
                      echo "<li>";
-                     echo "<a href=\"/tcd2_luiz_lorena_mariana/padrao/logout.php\">Logout</a>";
+                     echo "<a href=\"/tcd3_luiz_lorena_mariana/padrao/logout.php\">Logout</a>";
                      echo "</li>";
                     ?>
                 </ul>
@@ -129,7 +129,7 @@
                     
                      <?php
                      echo "<li>";
-                     echo "<a href=\"/tcd2_luiz_lorena_mariana/padrao/logout.php\">Logout</a>";
+                     echo "<a href=\"/tcd3_luiz_lorena_mariana/padrao/logout.php\">Logout</a>";
                      echo "</li>";
                     ?>
                 </ul>
