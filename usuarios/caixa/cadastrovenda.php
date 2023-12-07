@@ -77,6 +77,7 @@ Util::isCaixa();
       } else {
         echo ("<script>alert(\"Pin não encontrado ou Carteira não está habilitada\");</script>");
         echo ("<meta http-equiv=\"refresh\" content=\"0;url=cadastrovenda.php\"> ");
+        exit;
       }
       header('Location:cadastrovenda.php');
     }

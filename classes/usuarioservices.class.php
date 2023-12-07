@@ -233,7 +233,7 @@ class UsuarioServices
         $usuario = R::findOne('usuario', 'pin LIKE ?', [$pin]);
 
 
-        if ($usuario->carteira == TRUE) {
+        if ($usuario->carteira == TRUE && $usuario->habilitado == TRUE) {
             return $usuario;
         }
         R::close();

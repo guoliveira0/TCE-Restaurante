@@ -34,7 +34,7 @@ Util::isGerente();
             $carteiras = UsuarioServices::procurarCarteiraGerente($_POST['pin']);
             if($carteiras == NULL){
                 echo ("<script>alert(\"Nenhum pagamento pendente!!\");</script>");
-                echo ("<meta http-equiv=\"refresh\" content=\"0;url=../../usuarios/caixa/escolherpin.php\"> ");
+                echo ("<meta http-equiv=\"refresh\" content=\"0;url=../../usuarios/gerente/escolherpin.php\"> ");
             }else{
             foreach ($carteiras as $x){
             ?>
