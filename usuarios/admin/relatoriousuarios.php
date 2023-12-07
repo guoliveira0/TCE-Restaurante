@@ -22,7 +22,7 @@ Util::isAdmin();
     <main>
         <h1>Relatório Usuários</h1>
 
-        <table>
+        <table  class= "content-table">
             <tr>
                 <th>ID</th>
                 <th>Nome</th>

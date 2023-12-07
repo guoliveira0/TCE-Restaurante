@@ -22,7 +22,7 @@ Util::isGerente();
     <main>
         <h1>Relatório Clientes</h1>
 
-        <table>
+        <table class= "content-table">
             <tr>
             <th>ID</th>
                 <th>Nome</th>

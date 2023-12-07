@@ -18,7 +18,7 @@ Util::isGerente();
     <main>
         <h1>Relatório Produtos</h1>
 
-        <table>
+        <table class= "content-table">
             <tr>
                 <th>ID</th>
                 <th>Código</th>
