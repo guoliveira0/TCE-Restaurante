@@ -186,19 +186,9 @@ footer a {
     min-width: 400px;
 }
 
-<<<<<<< HEAD
 .content-table thead tr{
     background-color: #FAA968;
     color: #FFF2C3;
-=======
-thead {
-    background-color: #faa968;
-    color: #700202;
-}
-
-thead th {
-    padding: 10px;
->>>>>>> bb6adee02c6be49a7b40e4548dd01f0050f8ae4a
     text-align: left;
     font-weight: bold;
 }
